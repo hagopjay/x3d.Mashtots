@@ -1,0 +1,2046 @@
+{
+ "grade": "Measured",
+ "built": "2026-11-15 07:31:55 UTC",
+ "runs": {
+  "bpe-6M": {
+   "arm": "bpe",
+   "size": "6M",
+   "grabar": false,
+   "N": 6427904,
+   "tokens": 20000000,
+   "bpb_E": 1.1973562100081285,
+   "bpb_W": 1.2836925923336848,
+   "bpb_G": 2.0615331641600827,
+   "bpb_EW": 1.2405244011709067,
+   "bpb_deck_set": 1.084299743092724,
+   "western_gap": 0.0863363823255563,
+   "multiblimp": {
+    "hye": 0.7300353356890459,
+    "hyw": 0.7172593235039029
+   },
+   "mixture": {
+    "E": 0.5,
+    "W": 0.5
+   },
+   "epochs": {
+    "E": 1.986,
+    "W": 1.758
+   },
+   "train_minutes": 0.3,
+   "final_loss": 6.642500162124634
+  },
+  "bytes-6M": {
+   "arm": "bytes",
+   "size": "6M",
+   "grabar": false,
+   "N": 6427904,
+   "tokens": 20000000,
+   "bpb_E": 2.050787872941062,
+   "bpb_W": 2.098419480149007,
+   "bpb_G": 2.293449968909716,
+   "bpb_EW": 2.0746036765450344,
+   "bpb_deck_set": 2.0325537059796632,
+   "western_gap": 0.04763160720794524,
+   "multiblimp": {
+    "hye": 0.6544169611307421,
+    "hyw": 0.5897658282740676
+   },
+   "mixture": {
+    "E": 0.5,
+    "W": 0.5
+   },
+   "epochs": {
+    "E": 0.22,
+    "W": 0.232
+   },
+   "train_minutes": 0.2,
+   "final_loss": 1.4257671236991882
+  },
+  "mashtots-6M": {
+   "arm": "mashtots",
+   "size": "6M",
+   "grabar": false,
+   "N": 6427904,
+   "tokens": 20000000,
+   "bpb_E": 1.4713845539447084,
+   "bpb_W": 1.5661879051575276,
+   "bpb_G": 2.2434513442132094,
+   "bpb_EW": 1.518786229551118,
+   "bpb_deck_set": 1.3791175343238866,
+   "western_gap": 0.09480335121281924,
+   "multiblimp": {
+    "hye": 0.688339222614841,
+    "hyw": 0.6548135299219427
+   },
+   "mixture": {
+    "E": 0.5,
+    "W": 0.5
+   },
+   "epochs": {
+    "E": 1.308,
+    "W": 1.268
+   },
+   "train_minutes": 0.3,
+   "final_loss": 5.8047802448272705
+  }
+ },
+ "H": {
+  "H2": {
+   "per_size": {
+    "6M": {
+     "mashtots_vs_bpe": {
+      "delta": -0.2783,
+      "ci95": [
+       -0.2833,
+       -0.2739
+      ],
+      "varieties": [
+       "E",
+       "W"
+      ],
+      "verdict": "worse"
+     },
+     "bytes_vs_bpe": {
+      "delta": -0.8341,
+      "ci95": [
+       -0.8591,
+       -0.8114
+      ],
+      "varieties": [
+       "E",
+       "W"
+      ],
+      "verdict": "worse"
+     }
+    }
+   },
+   "verdict": "FAIL",
+   "rule": "mashtots better at the largest size with both arms and worse at none"
+  },
+  "H3": {
+   "fits": {},
+   "deck_points": [
+    {
+     "arm": "bytes",
+     "N": 6427904,
+     "bpb": 2.0326,
+     "deck": 2.3347,
+     "rel": -0.1294,
+     "deck_grade": "Estimate (outside 70M-1B)",
+     "verdict": "outside the deck's range"
+    },
+    {
+     "arm": "bpe",
+     "N": 6427904,
+     "bpb": 1.0843,
+     "deck": 2.3347,
+     "rel": -0.5356,
+     "deck_grade": "Estimate (outside 70M-1B)",
+     "verdict": "outside the deck's range"
+    },
+    {
+     "arm": "mashtots",
+     "N": 6427904,
+     "bpb": 1.3791,
+     "deck": 2.3347,
+     "rel": -0.4093,
+     "deck_grade": "Estimate (outside 70M-1B)",
+     "verdict": "outside the deck's range"
+    }
+   ]
+  },
+  "H4": {
+   "verdict": "not run"
+  },
+  "H6": {
+   "bytes": {
+    "hye": {
+     "size": "6M",
+     "accuracy": 0.6544,
+     "pairs": 1415,
+     "p_one_sided": 7.608538980982105e-32
+    },
+    "hyw": {
+     "size": "6M",
+     "accuracy": 0.5898,
+     "pairs": 1153,
+     "p_one_sided": 5.913048823063078e-10
+    }
+   },
+   "bpe": {
+    "hye": {
+     "size": "6M",
+     "accuracy": 0.73,
+     "pairs": 1415,
+     "p_one_sided": 1.0639652914872328e-69
+    },
+    "hyw": {
+     "size": "6M",
+     "accuracy": 0.7173,
+     "pairs": 1153,
+     "p_one_sided": 5.604095204397286e-51
+    }
+   },
+   "mashtots": {
+    "hye": {
+     "size": "6M",
+     "accuracy": 0.6883,
+     "pairs": 1415,
+     "p_one_sided": 8.49715409356147e-47
+    },
+    "hyw": {
+     "size": "6M",
+     "accuracy": 0.6548,
+     "pairs": 1153,
+     "p_one_sided": 2.0588566731335158e-26
+    }
+   }
+  },
+  "H1": {
+   "o200k (GPT-4o, gpt-oss)": {
+    "ours": 1.521,
+    "deck": 1.51,
+    "rel": 0.0073,
+    "reproduces": true
+   },
+   "Mistral Tekken (= Nemotron Nano 9B v2, Nemotron 3 Nano)": {
+    "ours": 1.76,
+    "deck": 1.74,
+    "rel": 0.0115,
+    "reproduces": true
+   },
+   "Gemma 3": {
+    "ours": 2.8,
+    "deck": 2.67,
+    "rel": 0.0487,
+    "reproduces": true
+   },
+   "DeepSeek V3": {
+    "ours": 2.938,
+    "deck": 2.87,
+    "rel": 0.0237,
+    "reproduces": true
+   },
+   "Qwen 2.5": {
+    "ours": 5.634,
+    "deck": 5.41,
+    "rel": 0.0414,
+    "reproduces": true
+   },
+   "cl100k (GPT-4)": {
+    "ours": 10.538,
+    "deck": 10.15,
+    "rel": 0.0382,
+    "reproduces": true
+   }
+  }
+ },
+ "token_bill": {
+  "grade": "Measured",
+  "built": "2026-11-15 07:28:05 UTC",
+  "udhr_paragraphs": [
+   61,
+   60
+  ],
+  "segmentation": "every <para> of the preamble and the articles",
+  "rows": {
+   "o200k (GPT-4o, gpt-oss)": {
+    "info": {
+     "source": "o200k_base",
+     "vocab": 200019,
+     "verified": "tiktoken hash check"
+    },
+    "deck": 1.51,
+    "udhr_tokens": [
+     2870,
+     1887
+    ],
+    "udhr_ratio": 1.521,
+    "fertility": {
+     "E:ud_armtdp": {
+      "tok_per_word": 2.855,
+      "ci95": [
+       2.789,
+       2.926
+      ],
+      "sentences": 600,
+      "words": 8305
+     },
+     "E:ud_bsut": {
+      "tok_per_word": 2.389,
+      "ci95": [
+       2.35,
+       2.427
+      ],
+      "sentences": 593,
+      "words": 8166
+     },
+     "W:ud_hyw": {
+      "tok_per_word": 2.804,
+      "ci95": [
+       2.769,
+       2.843
+      ],
+      "sentences": 677,
+      "words": 11057
+     },
+     "G:ud_caval": {
+      "tok_per_word": 2.664,
+      "ci95": [
+       2.633,
+       2.698
+      ],
+      "sentences": 563,
+      "words": 8231
+     }
+    }
+   },
+   "Mistral Tekken (= Nemotron Nano 9B v2, Nemotron 3 Nano)": {
+    "info": {
+     "source": "mistralai/Mistral-Nemo-Instruct-2407@04d8a905",
+     "vocab": 131072,
+     "verified": "sha256 matches the official file"
+    },
+    "deck": 1.74,
+    "udhr_tokens": [
+     3354,
+     1906
+    ],
+    "udhr_ratio": 1.76,
+    "fertility": {
+     "E:ud_armtdp": {
+      "tok_per_word": 3.235,
+      "ci95": [
+       3.159,
+       3.321
+      ],
+      "sentences": 600,
+      "words": 8305
+     },
+     "E:ud_bsut": {
+      "tok_per_word": 2.763,
+      "ci95": [
+       2.725,
+       2.802
+      ],
+      "sentences": 593,
+      "words": 8166
+     },
+     "W:ud_hyw": {
+      "tok_per_word": 3.35,
+      "ci95": [
+       3.31,
+       3.391
+      ],
+      "sentences": 677,
+      "words": 11057
+     },
+     "G:ud_caval": {
+      "tok_per_word": 3.031,
+      "ci95": [
+       2.994,
+       3.072
+      ],
+      "sentences": 563,
+      "words": 8231
+     }
+    }
+   },
+   "Nemotron Nano 9B v2": {
+    "info": {
+     "source": "nvidia/NVIDIA-Nemotron-Nano-9B-v2@6533e8de",
+     "vocab": 131072,
+     "verified": "sha256 matches the official file"
+    },
+    "deck": null,
+    "udhr_tokens": [
+     3354,
+     1906
+    ],
+    "udhr_ratio": 1.76,
+    "fertility": {
+     "E:ud_armtdp": {
+      "tok_per_word": 3.235,
+      "ci95": [
+       3.159,
+       3.321
+      ],
+      "sentences": 600,
+      "words": 8305
+     },
+     "E:ud_bsut": {
+      "tok_per_word": 2.763,
+      "ci95": [
+       2.725,
+       2.802
+      ],
+      "sentences": 593,
+      "words": 8166
+     },
+     "W:ud_hyw": {
+      "tok_per_word": 3.35,
+      "ci95": [
+       3.31,
+       3.391
+      ],
+      "sentences": 677,
+      "words": 11057
+     },
+     "G:ud_caval": {
+      "tok_per_word": 3.031,
+      "ci95": [
+       2.994,
+       3.072
+      ],
+      "sentences": 563,
+      "words": 8231
+     }
+    }
+   },
+   "Gemma 3": {
+    "info": {
+     "source": "mirror unsloth/gemma-3-4b-it@bf46152c, byte-identical to the official file (sha256 checked)",
+     "vocab": 262145,
+     "verified": "sha256 matches the official file"
+    },
+    "deck": 2.67,
+    "udhr_tokens": [
+     5211,
+     1861
+    ],
+    "udhr_ratio": 2.8,
+    "fertility": {
+     "E:ud_armtdp": {
+      "tok_per_word": 4.289,
+      "ci95": [
+       4.217,
+       4.365
+      ],
+      "sentences": 600,
+      "words": 8305
+     },
+     "E:ud_bsut": {
+      "tok_per_word": 3.887,
+      "ci95": [
+       3.836,
+       3.936
+      ],
+      "sentences": 593,
+      "words": 8166
+     },
+     "W:ud_hyw": {
+      "tok_per_word": 4.167,
+      "ci95": [
+       4.114,
+       4.221
+      ],
+      "sentences": 677,
+      "words": 11057
+     },
+     "G:ud_caval": {
+      "tok_per_word": 3.635,
+      "ci95": [
+       3.593,
+       3.682
+      ],
+      "sentences": 563,
+      "words": 8231
+     }
+    }
+   },
+   "DeepSeek V3": {
+    "info": {
+     "source": "deepseek-ai/DeepSeek-V3@e815299b",
+     "vocab": 128815,
+     "verified": "sha256 matches the official file"
+    },
+    "deck": 2.87,
+    "udhr_tokens": [
+     5494,
+     1870
+    ],
+    "udhr_ratio": 2.938,
+    "fertility": {
+     "E:ud_armtdp": {
+      "tok_per_word": 4.591,
+      "ci95": [
+       4.487,
+       4.693
+      ],
+      "sentences": 600,
+      "words": 8305
+     },
+     "E:ud_bsut": {
+      "tok_per_word": 4.071,
+      "ci95": [
+       4.019,
+       4.116
+      ],
+      "sentences": 593,
+      "words": 8166
+     },
+     "W:ud_hyw": {
+      "tok_per_word": 4.371,
+      "ci95": [
+       4.321,
+       4.427
+      ],
+      "sentences": 677,
+      "words": 11057
+     },
+     "G:ud_caval": {
+      "tok_per_word": 3.857,
+      "ci95": [
+       3.817,
+       3.906
+      ],
+      "sentences": 563,
+      "words": 8231
+     }
+    }
+   },
+   "Qwen 2.5": {
+    "info": {
+     "source": "Qwen/Qwen2.5-1.5B-Instruct@989aa798",
+     "vocab": 151665,
+     "verified": "sha256 matches the official file"
+    },
+    "deck": 5.41,
+    "udhr_tokens": [
+     10626,
+     1886
+    ],
+    "udhr_ratio": 5.634,
+    "fertility": {
+     "E:ud_armtdp": {
+      "tok_per_word": 7.655,
+      "ci95": [
+       7.514,
+       7.795
+      ],
+      "sentences": 600,
+      "words": 8305
+     },
+     "E:ud_bsut": {
+      "tok_per_word": 7.335,
+      "ci95": [
+       7.218,
+       7.455
+      ],
+      "sentences": 593,
+      "words": 8166
+     },
+     "W:ud_hyw": {
+      "tok_per_word": 6.99,
+      "ci95": [
+       6.91,
+       7.071
+      ],
+      "sentences": 677,
+      "words": 11057
+     },
+     "G:ud_caval": {
+      "tok_per_word": 5.68,
+      "ci95": [
+       5.614,
+       5.751
+      ],
+      "sentences": 563,
+      "words": 8231
+     }
+    }
+   },
+   "Llama 3.2 (= Llama 3.1 vocabulary)": {
+    "info": {
+     "source": "official file unavailable (GatedRepoError: gated? set HF_TOKEN after accepting the licence); mirror unsloth/Llama-3.2-3B-Instruct differs from the official file, not used"
+    },
+    "deck": 8.73,
+    "skipped": true
+   },
+   "cl100k (GPT-4)": {
+    "info": {
+     "source": "cl100k_base",
+     "vocab": 100277,
+     "verified": "tiktoken hash check"
+    },
+    "deck": 10.15,
+    "udhr_tokens": [
+     19875,
+     1886
+    ],
+    "udhr_ratio": 10.538,
+    "fertility": {
+     "E:ud_armtdp": {
+      "tok_per_word": 14.035,
+      "ci95": [
+       13.742,
+       14.32
+      ],
+      "sentences": 600,
+      "words": 8305
+     },
+     "E:ud_bsut": {
+      "tok_per_word": 13.475,
+      "ci95": [
+       13.242,
+       13.72
+      ],
+      "sentences": 593,
+      "words": 8166
+     },
+     "W:ud_hyw": {
+      "tok_per_word": 12.868,
+      "ci95": [
+       12.709,
+       13.031
+      ],
+      "sentences": 677,
+      "words": 11057
+     },
+     "G:ud_caval": {
+      "tok_per_word": 10.31,
+      "ci95": [
+       10.181,
+       10.455
+      ],
+      "sentences": 563,
+      "words": 8231
+     }
+    }
+   }
+  },
+  "word_forms": {
+   "E:ud_armtdp": {
+    "running_words": 8282,
+    "distinct_forms": 4195
+   },
+   "E:ud_bsut": {
+    "running_words": 8130,
+    "distinct_forms": 3764
+   },
+   "W:ud_hyw": {
+    "running_words": 9954,
+    "distinct_forms": 4595
+   },
+   "G:ud_caval": {
+    "running_words": 8230,
+    "distinct_forms": 2502
+   },
+   "udhr_hy": {
+    "running_words": 1321,
+    "distinct_forms": 596
+   },
+   "udhr_en": {
+    "running_words": 1681,
+    "distinct_forms": 500
+   }
+  }
+ },
+ "our_tokenizers": {
+  "grade": "Measured",
+  "arms": {
+   "bytes": {
+    "vocab": 257,
+    "fertility": {
+     "E:ud_armtdp": {
+      "tok_per_word": 14.146,
+      "ci95": [
+       13.857,
+       14.431
+      ],
+      "sentences": 600,
+      "words": 8305
+     },
+     "E:ud_bsut": {
+      "tok_per_word": 13.561,
+      "ci95": [
+       13.329,
+       13.804
+      ],
+      "sentences": 593,
+      "words": 8166
+     },
+     "W:ud_hyw": {
+      "tok_per_word": 12.916,
+      "ci95": [
+       12.764,
+       13.075
+      ],
+      "sentences": 677,
+      "words": 11057
+     },
+     "G:ud_caval": {
+      "tok_per_word": 10.31,
+      "ci95": [
+       10.181,
+       10.455
+      ],
+      "sentences": 563,
+      "words": 8231
+     }
+    },
+    "udhr_tokens": [
+     19886,
+     10222
+    ],
+    "udhr_ratio": 1.945,
+    "roundtrip_failures": 0,
+    "boundary": {
+     "E": {
+      "words": 4000,
+      "recall": 1.0,
+      "precision": 0.062,
+      "f1": 0.1167,
+      "tokens_per_word": 18.134
+     },
+     "W": {
+      "words": 4000,
+      "recall": 1.0,
+      "precision": 0.0667,
+      "f1": 0.125,
+      "tokens_per_word": 17.003
+     },
+     "G": {
+      "words": 2385,
+      "recall": 1.0,
+      "precision": 0.0854,
+      "f1": 0.1574,
+      "tokens_per_word": 13.707
+     }
+    },
+    "probes": {
+     "proverbs_1_2": {
+      "tokens": 97,
+      "pieces": [
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       ",",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�"
+      ]
+     },
+     "lords_prayer": {
+      "tokens": 374,
+      "pieces": [
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       ",",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       ",",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       ",",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       ",",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       ",",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       ",",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       ",",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       ",",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       ",",
+       " ",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       "�",
+       ","
+      ]
+     }
+    }
+   },
+   "bpe": {
+    "vocab": 32000,
+    "fertility": {
+     "E:ud_armtdp": {
+      "tok_per_word": 1.843,
+      "ci95": [
+       1.801,
+       1.892
+      ],
+      "sentences": 600,
+      "words": 8305
+     },
+     "E:ud_bsut": {
+      "tok_per_word": 1.595,
+      "ci95": [
+       1.567,
+       1.62
+      ],
+      "sentences": 593,
+      "words": 8166
+     },
+     "W:ud_hyw": {
+      "tok_per_word": 1.659,
+      "ci95": [
+       1.638,
+       1.68
+      ],
+      "sentences": 677,
+      "words": 11057
+     },
+     "G:ud_caval": {
+      "tok_per_word": 1.792,
+      "ci95": [
+       1.772,
+       1.816
+      ],
+      "sentences": 563,
+      "words": 8231
+     }
+    },
+    "udhr_tokens": [
+     1849,
+     4203
+    ],
+    "udhr_ratio": 0.44,
+    "roundtrip_failures": 0,
+    "boundary": {
+     "E": {
+      "words": 4000,
+      "recall": 0.1872,
+      "precision": 0.2391,
+      "f1": 0.21,
+      "tokens_per_word": 1.783
+     },
+     "W": {
+      "words": 4000,
+      "recall": 0.2075,
+      "precision": 0.2974,
+      "f1": 0.2444,
+      "tokens_per_word": 1.698
+     },
+     "G": {
+      "words": 2385,
+      "recall": 0.3899,
+      "precision": 0.3698,
+      "f1": 0.3796,
+      "tokens_per_word": 2.055
+     }
+    },
+    "probes": {
+     "proverbs_1_2": {
+      "tokens": 17,
+      "pieces": [
+       "Ճ",
+       "ան",
+       "աչ",
+       "ել",
+       " զ",
+       "իմաստ",
+       "ութիւն",
+       " եւ",
+       " զ",
+       "խ",
+       "րատ",
+       ",",
+       " իմանալ",
+       " զբ",
+       "անս",
+       " հանճար",
+       "ոյ"
+      ]
+     },
+     "lords_prayer": {
+      "tokens": 63,
+      "pieces": [
+       "Հայր",
+       " մեր",
+       ",",
+       " որ",
+       " յերկ",
+       "ինս",
+       " ես",
+       ",",
+       " սուրբ",
+       " եղիցի",
+       " անուն",
+       " քո",
+       ",",
+       " եկ",
+       "եսցէ",
+       " արքայ",
+       "ութիւն",
+       " քո",
+       ",",
+       " եղ",
+       "իցին",
+       " կամք",
+       " քո",
+       ",",
+       " որպէս",
+       " յերկ",
+       "ինս",
+       " եւ",
+       " յերկ",
+       "րի",
+       ",",
+       " եւ",
+       " թող",
+       " մեզ",
+       " զ",
+       "պարտ",
+       "իս",
+       " մեր",
+       ",",
+       " որպէս",
+       " եւ",
+       " մեք",
+       " թող",
+       "ում",
+       "ք",
+       " մեր",
+       "ոց",
+       " պարտ",
+       "ապան",
+       "աց",
+       ",",
+       " եւ",
+       " մի",
+       " տանի",
+       "ր",
+       " զմ",
+       "եզ",
+       " ի",
+       " փորձ",
+       "ութիւն",
+       ",",
+       " ամէն",
+       ","
+      ]
+     }
+    }
+   },
+   "mashtots": {
+    "vocab": 32000,
+    "fertility": {
+     "E:ud_armtdp": {
+      "tok_per_word": 2.534,
+      "ci95": [
+       2.489,
+       2.574
+      ],
+      "sentences": 600,
+      "words": 8305
+     },
+     "E:ud_bsut": {
+      "tok_per_word": 2.322,
+      "ci95": [
+       2.298,
+       2.346
+      ],
+      "sentences": 593,
+      "words": 8166
+     },
+     "W:ud_hyw": {
+      "tok_per_word": 2.296,
+      "ci95": [
+       2.274,
+       2.321
+      ],
+      "sentences": 677,
+      "words": 11057
+     },
+     "G:ud_caval": {
+      "tok_per_word": 2.11,
+      "ci95": [
+       2.087,
+       2.135
+      ],
+      "sentences": 563,
+      "words": 8231
+     }
+    },
+    "udhr_tokens": [
+     3080,
+     3795
+    ],
+    "udhr_ratio": 0.812,
+    "roundtrip_failures": 0,
+    "boundary": {
+     "E": {
+      "words": 4000,
+      "recall": 0.6392,
+      "precision": 0.3588,
+      "f1": 0.4596,
+      "tokens_per_word": 2.781
+     },
+     "W": {
+      "words": 4000,
+      "recall": 0.6633,
+      "precision": 0.4149,
+      "f1": 0.5104,
+      "tokens_per_word": 2.599
+     },
+     "G": {
+      "words": 2385,
+      "recall": 0.5799,
+      "precision": 0.4162,
+      "f1": 0.4846,
+      "tokens_per_word": 2.394
+     }
+    },
+    "probes": {
+     "proverbs_1_2": {
+      "tokens": 19,
+      "pieces": [
+       "Ճանաչ",
+       "ել",
+       " զ",
+       "իմաստ",
+       "ութիւն",
+       " եւ",
+       " զ",
+       "խ",
+       "րատ",
+       ",",
+       " իմա",
+       "ն",
+       "ալ",
+       " զբա",
+       "ն",
+       "ս",
+       " հանճ",
+       "ա",
+       "րոյ"
+      ]
+     },
+     "lords_prayer": {
+      "tokens": 73,
+      "pieces": [
+       "Հայ",
+       "ր",
+       " մեր",
+       ",",
+       " որ",
+       " յերկ",
+       "ինս",
+       " ես",
+       ",",
+       " սուրբ",
+       " եղի",
+       "ցի",
+       " անո",
+       "ւ",
+       "ն",
+       " քո",
+       ",",
+       " եկե",
+       "սցէ",
+       " արք",
+       "այ",
+       "ութիւն",
+       " քո",
+       ",",
+       " եղի",
+       "ցին",
+       " կամ",
+       "ք",
+       " քո",
+       ",",
+       " որպ",
+       "էս",
+       " յերկ",
+       "ինս",
+       " եւ",
+       " յերկ",
+       "րի",
+       ",",
+       " եւ",
+       " թող",
+       " մեզ",
+       " զ",
+       "պարտ",
+       "իս",
+       " մեր",
+       ",",
+       " որպ",
+       "էս",
+       " եւ",
+       " մեք",
+       " թող",
+       "ու",
+       "մք",
+       " մեր",
+       "ոց",
+       " պարտ",
+       "ապ",
+       "ա",
+       "նաց",
+       ",",
+       " եւ",
+       " մի",
+       " տան",
+       "իր",
+       " զմե",
+       "զ",
+       " ի",
+       " փորձ",
+       "ութիւն",
+       ",",
+       " ամէ",
+       "ն",
+       ","
+      ]
+     }
+    }
+   },
+   "bpe_morph": {
+    "vocab": 32000,
+    "fertility": {
+     "E:ud_armtdp": {
+      "tok_per_word": 2.533,
+      "ci95": [
+       2.488,
+       2.573
+      ],
+      "sentences": 600,
+      "words": 8305
+     },
+     "E:ud_bsut": {
+      "tok_per_word": 2.322,
+      "ci95": [
+       2.298,
+       2.346
+      ],
+      "sentences": 593,
+      "words": 8166
+     },
+     "W:ud_hyw": {
+      "tok_per_word": 2.296,
+      "ci95": [
+       2.276,
+       2.32
+      ],
+      "sentences": 677,
+      "words": 11057
+     },
+     "G:ud_caval": {
+      "tok_per_word": 2.109,
+      "ci95": [
+       2.086,
+       2.134
+      ],
+      "sentences": 563,
+      "words": 8231
+     }
+    },
+    "udhr_tokens": [
+     3083,
+     3792
+    ],
+    "udhr_ratio": 0.813,
+    "roundtrip_failures": 0,
+    "boundary": {
+     "E": {
+      "words": 4000,
+      "recall": 0.6395,
+      "precision": 0.3589,
+      "f1": 0.4598,
+      "tokens_per_word": 2.782
+     },
+     "W": {
+      "words": 4000,
+      "recall": 0.6635,
+      "precision": 0.4155,
+      "f1": 0.511,
+      "tokens_per_word": 2.597
+     },
+     "G": {
+      "words": 2385,
+      "recall": 0.5799,
+      "precision": 0.4163,
+      "f1": 0.4847,
+      "tokens_per_word": 2.393
+     }
+    },
+    "probes": {
+     "proverbs_1_2": {
+      "tokens": 19,
+      "pieces": [
+       "Ճանաչ",
+       "ել",
+       " զ",
+       "իմաստ",
+       "ութիւն",
+       " եւ",
+       " զ",
+       "խ",
+       "րատ",
+       ",",
+       " իմա",
+       "ն",
+       "ալ",
+       " զբա",
+       "ն",
+       "ս",
+       " հանճ",
+       "ա",
+       "րոյ"
+      ]
+     },
+     "lords_prayer": {
+      "tokens": 73,
+      "pieces": [
+       "Հայ",
+       "ր",
+       " մեր",
+       ",",
+       " որ",
+       " յերկ",
+       "ինս",
+       " ես",
+       ",",
+       " սուրբ",
+       " եղի",
+       "ցի",
+       " անո",
+       "ւ",
+       "ն",
+       " քո",
+       ",",
+       " եկե",
+       "սցէ",
+       " արք",
+       "այ",
+       "ութիւն",
+       " քո",
+       ",",
+       " եղի",
+       "ցին",
+       " կամ",
+       "ք",
+       " քո",
+       ",",
+       " որպ",
+       "էս",
+       " յերկ",
+       "ինս",
+       " եւ",
+       " յերկ",
+       "րի",
+       ",",
+       " եւ",
+       " թող",
+       " մեզ",
+       " զ",
+       "պարտ",
+       "իս",
+       " մեր",
+       ",",
+       " որպ",
+       "էս",
+       " եւ",
+       " մեք",
+       " թող",
+       "ու",
+       "մք",
+       " մեր",
+       "ոց",
+       " պարտ",
+       "ապ",
+       "ա",
+       "նաց",
+       ",",
+       " եւ",
+       " մի",
+       " տան",
+       "իր",
+       " զմե",
+       "զ",
+       " ի",
+       " փորձ",
+       "ութիւն",
+       ",",
+       " ամէ",
+       "ն",
+       ","
+      ]
+     }
+    }
+   },
+   "mashtots_nomorph": {
+    "vocab": 32000,
+    "fertility": {
+     "E:ud_armtdp": {
+      "tok_per_word": 1.845,
+      "ci95": [
+       1.803,
+       1.894
+      ],
+      "sentences": 600,
+      "words": 8305
+     },
+     "E:ud_bsut": {
+      "tok_per_word": 1.597,
+      "ci95": [
+       1.569,
+       1.621
+      ],
+      "sentences": 593,
+      "words": 8166
+     },
+     "W:ud_hyw": {
+      "tok_per_word": 1.659,
+      "ci95": [
+       1.639,
+       1.68
+      ],
+      "sentences": 677,
+      "words": 11057
+     },
+     "G:ud_caval": {
+      "tok_per_word": 1.794,
+      "ci95": [
+       1.773,
+       1.817
+      ],
+      "sentences": 563,
+      "words": 8231
+     }
+    },
+    "udhr_tokens": [
+     1849,
+     4204
+    ],
+    "udhr_ratio": 0.44,
+    "roundtrip_failures": 0,
+    "boundary": {
+     "E": {
+      "words": 4000,
+      "recall": 0.1905,
+      "precision": 0.2421,
+      "f1": 0.2132,
+      "tokens_per_word": 1.787
+     },
+     "W": {
+      "words": 4000,
+      "recall": 0.2238,
+      "precision": 0.3192,
+      "f1": 0.2631,
+      "tokens_per_word": 1.701
+     },
+     "G": {
+      "words": 2385,
+      "recall": 0.395,
+      "precision": 0.3729,
+      "f1": 0.3836,
+      "tokens_per_word": 2.06
+     }
+    },
+    "probes": {
+     "proverbs_1_2": {
+      "tokens": 16,
+      "pieces": [
+       "Ճան",
+       "աչ",
+       "ել",
+       " զ",
+       "իմաստ",
+       "ութիւն",
+       " եւ",
+       " զ",
+       "խ",
+       "րատ",
+       ",",
+       " իմանալ",
+       " զբ",
+       "անս",
+       " հանճար",
+       "ոյ"
+      ]
+     },
+     "lords_prayer": {
+      "tokens": 65,
+      "pieces": [
+       "Հայր",
+       " մեր",
+       ",",
+       " որ",
+       " յեր",
+       "կին",
+       "ս",
+       " ես",
+       ",",
+       " սուրբ",
+       " եղիցի",
+       " անուն",
+       " քո",
+       ",",
+       " եկ",
+       "եսցէ",
+       " արքայ",
+       "ութիւն",
+       " քո",
+       ",",
+       " եղ",
+       "իցին",
+       " կամք",
+       " քո",
+       ",",
+       " որպէս",
+       " յեր",
+       "կին",
+       "ս",
+       " եւ",
+       " յ",
+       "երկրի",
+       ",",
+       " եւ",
+       " թող",
+       " մեզ",
+       " զ",
+       "պարտ",
+       "իս",
+       " մեր",
+       ",",
+       " որպէս",
+       " եւ",
+       " մեք",
+       " թող",
+       "ում",
+       "ք",
+       " մեր",
+       "ոց",
+       " պարտ",
+       "ապան",
+       "աց",
+       ",",
+       " եւ",
+       " մի",
+       " տան",
+       "իր",
+       " զմ",
+       "եզ",
+       " ի",
+       " փորձ",
+       "ութիւն",
+       ",",
+       " ամէն",
+       ","
+      ]
+     }
+    }
+   }
+  }
+ },
+ "data_stats": {
+  "profile": "smoke",
+  "built": "2026-11-15 07:26:11 UTC",
+  "version": "mashtots-poc v1",
+  "sources": {
+   "ud_armtdp": {
+    "docs_in": 142,
+    "contaminated": 78,
+    "kept": 64,
+    "bytes_kept": 456705,
+    "label_E": 64,
+    "ortho_reformed": 64
+   },
+   "ud_bsut": {
+    "docs_in": 18,
+    "contaminated": 14,
+    "kept": 4,
+    "bytes_kept": 51221,
+    "label_E": 4,
+    "ortho_reformed": 4
+   },
+   "ud_hyw": {
+    "docs_in": 70,
+    "contaminated": 52,
+    "kept": 18,
+    "bytes_kept": 174306,
+    "label_W": 18,
+    "ortho_classical": 18
+   },
+   "ud_caval": {
+    "docs_in": 94,
+    "kept": 71,
+    "bytes_kept": 448827,
+    "label_G": 71,
+    "ortho_classical": 71,
+    "contaminated": 23
+   },
+   "armweb_val": {
+    "docs_in": 19372,
+    "kept": 18125,
+    "bytes_kept": 44900326,
+    "label_E": 18101,
+    "ortho_reformed": 16135,
+    "ortho_unclear": 1748,
+    "contaminated": 952,
+    "ortho_classical": 242,
+    "short": 284,
+    "label_W": 24,
+    "not_armenian": 11
+   },
+   "wiki_hyw": {
+    "docs_in": 11520,
+    "kept": 9685,
+    "bytes_kept": 42913238,
+    "label_W": 9663,
+    "ortho_classical": 9623,
+    "short": 422,
+    "contaminated": 1297,
+    "ortho_unclear": 53,
+    "not_armenian": 115,
+    "label_E": 22,
+    "ortho_reformed": 9,
+    "duplicate": 1
+   }
+  },
+  "eval": {
+   "fw2_hyw_test_labels": {
+    "W": 1464,
+    "G": 2
+   },
+   "E_ud_armtdp_test": {
+    "variety": "E",
+    "docs": 25,
+    "bytes": 118056,
+    "how": "UD ArmTDP test split"
+   },
+   "E_ud_bsut_test": {
+    "variety": "E",
+    "docs": 13,
+    "bytes": 111319,
+    "how": "UD BSUT test split"
+   },
+   "W_ud_hyw_test": {
+    "variety": "W",
+    "docs": 13,
+    "bytes": 143474,
+    "how": "UD Western ArmTDP test split"
+   },
+   "G_ud_caval_test": {
+    "variety": "G",
+    "docs": 11,
+    "bytes": 85414,
+    "how": "UD CAVaL test split (Gospels)"
+   },
+   "E_armweb_test": {
+    "variety": "E",
+    "docs": 1360,
+    "bytes": 4008162,
+    "how": "ArmWeb test_iid, first 4 MB of documents"
+   },
+   "W_fw2_test": {
+    "variety": "W",
+    "docs": 1464,
+    "bytes": 8003002,
+    "how": "FineWeb-2 hyw test split (classifier-confirmed Western documents)"
+   },
+   "W_wiki_heldout": {
+    "variety": "W",
+    "docs": 201,
+    "bytes": 1011408,
+    "how": "Western Wikipedia, articles whose id hash falls in the 2% hold-out"
+   },
+   "multiblimp": {
+    "hye": 1415,
+    "hyw": 1153
+   }
+  },
+  "pools": {
+   "E": {
+    "bytes": 45379554,
+    "docs": 18191,
+    "by_source": {
+     "ud_armtdp": 456705,
+     "ud_bsut": 51221,
+     "armweb_val": 44798164,
+     "wiki_hyw": 73464
+    }
+   },
+   "W": {
+    "bytes": 43116242,
+    "docs": 9705,
+    "by_source": {
+     "ud_hyw": 174306,
+     "armweb_val": 102162,
+     "wiki_hyw": 42839774
+    }
+   },
+   "G": {
+    "bytes": 448827,
+    "docs": 71,
+    "by_source": {
+     "ud_caval": 448827
+    }
+   }
+  },
+  "classifier": {
+   "unit": "single sentences (20+ characters) of the UD test splits",
+   "accuracy": {
+    "E": 0.9901,
+    "W": 0.9924,
+    "G": 1.0
+   },
+   "confusion": {
+    "E->E": 1097,
+    "E->G": 1,
+    "E->W": 10,
+    "G->G": 553,
+    "W->E": 1,
+    "W->G": 4,
+    "W->W": 657
+   },
+   "grade": "Measured"
+  },
+  "crosstab": {},
+  "crosstab_bytes": {
+   "E|classical": 320915,
+   "E|reformed": 41589474,
+   "E|unclear": 3469165,
+   "G|classical": 448827,
+   "W|classical": 43063454,
+   "W|reformed": 409,
+   "W|unclear": 52379
+  },
+  "seconds": 18.1,
+  "grade": "Measured (this run's data)"
+ }
+}
