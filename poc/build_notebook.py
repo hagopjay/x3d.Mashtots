@@ -13,7 +13,7 @@ import sys
 import textwrap
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-BUILD = "v1"
+BUILD = "v1.1"
 FILES = ["mp_common.py", "mp_data.py", "mp_tok.py", "mp_model.py", "mp_train.py", "mp_eval.py", "mp_analyze.py", "mp_export.py", "nb_helpers.py", "PREREG.md"]
 UDHR = os.environ.get("MP_UDHR_SRC", os.path.expanduser("~/Projects/x3d/work/armenian-tokenizer-census/data/udhr"))
 EMBED = [(f, os.path.join(HERE, f)) for f in FILES] + [(f"udhr/{n}", os.path.join(UDHR, n)) for n in ("udhr_hye.xml", "udhr_eng.xml")]
