@@ -15,8 +15,18 @@ import subprocess
 import sys
 import time
 
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+_HERE = os.path.dirname(os.path.abspath(__file__))
+if _HERE not in sys.path:
+    sys.path.append(_HERE)        # appended, not prepended: in a shared Colab kernel this folder must never shadow another lane's modules
 import mp_common as C  # noqa: E402
+
+# Shared-kernel edition (v1.1, 15 Nov 2026). In a kernel that another lane also uses (the Unreal lane on the G4), the notebook must not change
+# the kernel's packages or os.environ. So: PY is the interpreter for every subprocess, ENV is the environment they get (with PYTHONPATH pointing at
+# a private package folder), and the kernel's own os.environ is never written. A standalone notebook leaves both at their defaults.
+PY = sys.executable
+ENV = None                        # None = inherit os.environ (standalone notebook); the shared-kernel cells set a private copy
+DEPS = None                       # private package folder (pip --target); None = install into the interpreter (standalone notebook)
+SHARED = False                    # True in the shared kernel: no advice may ever say "change the runtime type" or "restart" (it would kill the other lane)
 
 LOCAL = C.LOCAL
 PIP = ["tokenizers>=0.21", "tiktoken>=0.8", "pyarrow>=15", "huggingface_hub>=0.30", "regex", "scipy", "matplotlib"]
@@ -24,7 +34,9 @@ CODE_FILES = ["mp_common.py", "mp_data.py", "mp_tok.py", "mp_model.py", "mp_trai
 
 
 def sh(cmd, cwd=None, env=None, check=True, quiet=False):
-    p = subprocess.Popen(cmd if isinstance(cmd, list) else ["bash", "-c", cmd], cwd=cwd, env=env, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+    if isinstance(cmd, list) and cmd and cmd[0] == sys.executable:
+        cmd = [PY] + cmd[1:]
+    p = subprocess.Popen(cmd if isinstance(cmd, list) else ["bash", "-c", cmd], cwd=cwd, env=env if env is not None else ENV, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                          text=True, bufsize=1)
     for line in p.stdout:
         if not quiet:
@@ -41,7 +53,7 @@ def ok(flag, msg, hint=""):
 
 
 def _probe(code, timeout=900):
-    p = subprocess.run([sys.executable, "-c", code], capture_output=True, text=True, timeout=timeout)
+    p = subprocess.run([PY, "-c", code], capture_output=True, text=True, timeout=timeout, env=ENV)
     return p.returncode, p.stdout, p.stderr
 
 
@@ -54,7 +66,45 @@ def install():
     if LOCAL:
         print("local dry run: no pip")
         return
+    if DEPS:
+        _install_private()
+        return
     sh([sys.executable, "-m", "pip", "install", "-q", *PIP])          # torch is Colab's own build: never reinstalled here
+
+
+def _missing(reqs):
+    """The requirements the interpreter does not already satisfy (name>=version), read from package metadata without importing anything."""
+    import importlib.metadata as md
+    import re
+    out = []
+    for r in reqs:
+        m = re.match(r"^([A-Za-z0-9_.-]+)(?:>=([0-9.]+))?$", r)
+        name, low = m.group(1), m.group(2)
+        try:
+            have = md.version(name)
+        except md.PackageNotFoundError:
+            out.append((r, None))
+            continue
+        if low:
+            def t(v):
+                return tuple(int(x) for x in re.findall(r"\d+", v)[:3])
+            if t(have) < t(low):
+                out.append((r, have))
+    return out
+
+
+def _install_private():
+    """Shared kernel: install only what is missing or too old, with --no-deps, into DEPS (pip --target). Nothing in the kernel's site-packages changes;
+    only subprocesses see DEPS (through ENV's PYTHONPATH). numpy, Pillow and torch are never installed here, whatever the requirement list says."""
+    miss = [(r, have) for r, have in _missing(PIP) if not r.split(">=")[0].lower() in ("numpy", "pillow", "torch")]
+    for r, have in _missing(PIP):
+        print(f"  {r:<24} {'kernel has ' + have if have else 'missing in the kernel'}")
+    if not miss:
+        print("every requirement is already met by the kernel's own packages: nothing installed")
+        return
+    pathlib.Path(DEPS).mkdir(parents=True, exist_ok=True)
+    sh([sys.executable, "-m", "pip", "install", "-q", "--no-deps", "--upgrade", "--target", str(DEPS), *[r for r, _ in miss]])
+    print("installed into the private folder", DEPS, "(the kernel's packages are unchanged):", ", ".join(r for r, _ in miss))
 
 
 def env_report():
@@ -74,7 +124,7 @@ def env_report():
         print(_last(err))
 
 
-def doctor(src, root, drive_out=None, need_gb=1.0):
+def doctor(src, root, drive_out=None, need_gb=1.0, compile_=True):
     """Every dependency in one pass, each in a fresh process. ALL GOOD or a list of what to send to Claude."""
     src, root = pathlib.Path(src), pathlib.Path(root)
     res = []
@@ -84,12 +134,14 @@ def doctor(src, root, drive_out=None, need_gb=1.0):
         rc, out, err = _probe("import torch; assert torch.cuda.is_available(); a=torch.randn(4096,4096,device='cuda',dtype=torch.bfloat16); "
                               "import time; torch.cuda.synchronize(); t=time.time(); [a@a for _ in range(50)]; torch.cuda.synchronize(); "
                               "print('%s, bf16 matmul %.0f TFLOP/s' % (torch.cuda.get_device_name(0), 50*2*4096**3/(time.time()-t)/1e12))")
-        res.append(ok(rc == 0, "GPU + bf16: " + (out.strip() or _last(err)), "Runtime > Change runtime type > G4, then run from cell 1"))
+        res.append(ok(rc == 0, "GPU + bf16: " + (out.strip() or _last(err)),
+                      "do NOT change the runtime type or restart: this runtime is shared with the Unreal lane. Copy this line to Claude."
+                      if SHARED else "Runtime > Change runtime type > G4, then run from cell 1"))
     code = (f"import sys; sys.path.insert(0, {str(src)!r}); import torch, mp_model as M\n"
             "dev = 'cuda' if torch.cuda.is_available() else 'cpu'\n"
             "cfg = M.Config(vocab=512, d=128, L=2, H=4, seq=256); m = M.GPT(cfg).to(dev)\n"
             "x = torch.randint(0, 512, (4, 256), device=dev)\n"
-            "f = torch.compile(m) if dev == 'cuda' else m\n"
+            f"f = torch.compile(m) if dev == 'cuda' and {bool(compile_)!r} else m\n"
             "opt = torch.optim.AdamW(m.parameters(), 1e-3); l0 = None\n"
             "for i in range(30):\n"
             "    with torch.autocast(device_type=dev.split(':')[0], dtype=torch.bfloat16, enabled=dev=='cuda'):\n"
@@ -97,7 +149,7 @@ def doctor(src, root, drive_out=None, need_gb=1.0):
             "    loss.backward(); opt.step(); opt.zero_grad(); l0 = l0 or float(loss)\n"
             "a = m(x[:1, :64], need_attn=True)['attn'][0]; s = a.sum(-1)\n"
             "assert torch.allclose(s, torch.ones_like(s), atol=1e-3)\n"
-            "print('loss %.2f -> %.2f in 30 steps, compile %s, attention rows sum to 1' % (l0, float(loss), dev == 'cuda'))\n")
+            f"print('loss %.2f -> %.2f in 30 steps, compile %s, attention rows sum to 1' % (l0, float(loss), dev == 'cuda' and {bool(compile_)!r}))\n")
     rc, out, err = _probe(code)
     res.append(ok(rc == 0 and "->" in out, "model: forward, backward, SDPA, torch.compile, explicit attention: " + (out.strip() or _last(err)),
                   "copy the message to Claude"))
@@ -162,7 +214,7 @@ def bench(src, data, specs, compile_=True, steps=20):
     out = {}
     for key in sorted({(s["arm"], s["size"]) for s in specs}, key=lambda k: (C.non_embedding_params(k[1]), k[0])):
         arm, size = key
-        d = pathlib.Path(data) / "bench" / f"{arm}-{size}"
+        d = pathlib.Path(data) / "bench" / f"{arm}-{size}" / ("compiled" if compile_ and not LOCAL else "eager")   # v1.1: never reuse the other mode's speed
         if not (d / "bench.json").exists():
             sh([sys.executable, str(pathlib.Path(src) / "mp_train.py"), "--root", str(data), "--arm", arm, "--size", size, "--out", str(d),
                 "--bench-steps", str(steps if not LOCAL else 3), "--device", "cpu" if LOCAL else "cuda"] + (["--compile"] if compile_ and not LOCAL else []))
@@ -247,6 +299,7 @@ def checkpoint(src_dir, drive_out, names):
         if p.is_dir():
             shutil.copytree(p, dst / n, dirs_exist_ok=True)
         elif p.exists():
+            (dst / n).parent.mkdir(parents=True, exist_ok=True)     # v1.1: "tokens/encode_report.json" needs its folder on Drive
             shutil.copy(p, dst / n)
     print("saved to Drive:", ", ".join(n for n in names if (src_dir / n).exists()))
 
