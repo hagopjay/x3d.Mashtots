@@ -18,8 +18,9 @@ The core profile trained 11 models on the shared Colab G4, from 07:48 to 09:55 U
 
 1. **The smoke gap was an artifact of tiny data.** At 6M, mashtots trailed by 0.278 bpb in smoke (20M tokens on 0.11 GB) and by 0.006 in core (129M tokens on 4.2 GB).
 2. **mashtots loses at equal compute, but narrowly.** It reads about a third less text per token, yet trails by only 1.5 % to 3 %. An equal-bytes comparison is the natural exploratory follow-up. PREDICTIONS.md already named it.
-3. **mashtots helps Western Armenian (Suspected: one seed per run).** At 15M and 40M it has the smaller Western gap and the better hyw grammar score. Western is the data-starved variety. At 40M its pool hit the 4-epoch cap, and its share of training fell from 50 % to 44 %.
-4. **Grabar text is nearly free and very effective.** About 1 % Gospel text cuts Grabar bpb by 0.23 to 0.29 with no cost to E+W. Note the CC BY-NC-SA condition on the -G models.
+3. **Western Armenian is data-starved, and the cap shows it.** The Western pool (0.72 GB) is a fifth the size of the Eastern one. At 40M, bpe hit the 4-epoch cap on Western: its Western share fell from 50 % to 43.8 % and it saw each Western token 4.0 times (meta.json). Its Western gap widened from 0.033 to 0.045. mashtots and bytes read less text per token, so they stayed under the cap (50 %, 3.1 and 0.5 epochs).
+   *Correction, 15 Nov 10:30 UTC:* an earlier version of this note said mashtots helps Western Armenian. At 40M that comparison is confounded, because only bpe had its Western share cut. At 15M, where both arms had 50 %, mashtots' Western gap is smaller by 0.003, with no CI computed. So "mashtots helps Western" is unresolved, not Suspected. A clean test needs equal Western share and several seeds.
+4. **Grabar text is nearly free and very effective.** Gospel text was 0.29 % of training at 15M and 0.11 % at 40M (meta.json; an earlier version said about 1 %), each token seen 4 times. It cut Grabar bpb by 0.29 and 0.23 with no cost to E+W. Note the CC BY-NC-SA condition on the -G models.
 5. **The scaling is smooth.** bpe bpb_EW goes 0.827, 0.710, 0.647 for 6.4M, 14.2M and 38.5M non-embedding parameters.
 
 ## H3 needs a deviation (proposed here, dated 15 Nov 2026, before any full run)
