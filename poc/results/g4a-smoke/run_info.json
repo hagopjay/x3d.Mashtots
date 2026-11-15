@@ -1,0 +1,12 @@
+{
+ "version": "mashtots-poc v1.1 (shared-kernel edition)",
+ "profile": "smoke",
+ "run": "g4a",
+ "finished": "2026-11-15 07:32:47 UTC",
+ "hardware": {"gpu": ["NVIDIA RTX PRO 6000 Blackwell Server Edition", "580.82.07", "97887", "0", "0", "12.0"],
+  "cpus": 48, "ram_gb": 189.9, "disk_free_gb": 144.8, "python": "3.13.16", "kernel_torch": "2.14.1+cu130", "kernel_numpy": "2.4.6"},
+ "subprocess_packages": ["torch 2.14.1+cu130", "tokenizers 0.23.3", "tiktoken 0.14.0", "pyarrow 23.0.1", "huggingface_hub 1.33.0", "numpy 2.4.6"],
+ "runs_done": ["bpe-6M", "bytes-6M", "mashtots-6M"],
+ "projected_hours": 0.16, "units_per_hour": 8.7, "train_wall_hours": 0.019,
+ "kernel_audit": "globals rebound: none; removed: none; new globals: none; sys.path appended /content/mashtots/src only, prefix intact; os.environ unchanged"
+}
