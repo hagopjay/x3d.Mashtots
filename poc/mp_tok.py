@@ -355,6 +355,9 @@ def load_morph(root):
 
 
 def load_encoder(root, arm):
+    if arm == "letters":
+        import mp_letters
+        return mp_letters.LettersEncoder.load(root)
     morph = load_morph(root) if arm in ("mashtots", "bpe_morph") else None
     return Encoder(arm, None if arm == "bytes" else tok_dir(root) / f"{arm}.json", morph)
 

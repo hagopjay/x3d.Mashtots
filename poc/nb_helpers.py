@@ -210,6 +210,39 @@ def grid(profile, arms_override="", sizes_override="", grabar=True):
     return specs
 
 
+def letters_grid(sizes_override="", ladder=True, anchors=True, seeds=(405, 406)):
+    """The letters study's runs (LETTERS-PREREG.md section 4), cheapest first. Each spec carries its extra trainer arguments."""
+    P = dict(tokens_override=C.LOCAL_PROFILE["tokens_override"]) if LOCAL else dict(tokens_override=None)
+    small, mid, big = ("tiny", "tiny", "tiny") if LOCAL else ("6M", "15M", "40M")
+    if sizes_override:
+        small, mid, big = (sizes_override.split(",") + [sizes_override.split(",")[-1]] * 3)[:3]
+    T = lambda s: C.train_tokens(s, P)
+    specs = []
+    def add(arm, size, tag, args):
+        specs.append(dict(arm=arm, size=size, grabar=False, tokens=T(size), id=f"{arm}-{size}{tag}", args=args))
+    if anchors:                                    # the same runs as core: the rebuilt data must give the same numbers (check A1)
+        add("bpe", small, "-anchor", [])
+        add("bytes", small, "-anchor", [])
+    add("letters", small, "", [])
+    add("letters", mid, "", [])
+    for seed in seeds:
+        tag = "" if seed == seeds[0] else f"-s{seed}"
+        if seed != seeds[0]:
+            add("letters", mid, tag, ["--seed", seed])
+        add("letters", mid, f"-E{tag}", ["--pools", "E", "--seed", seed])
+        add("letters", mid, f"-W{tag}", ["--pools", "W", "--seed", seed])
+    if ladder:
+        for size, fracs in ((mid, (0.125, 0.25, 0.5, 1.0)), (big, (0.25, 0.5, 1.0))):
+            for f in fracs:
+                add("bpe", size, f"-W{f:g}" if f < 1 else "-Wfull", ["--w-file", f"W@{f:g}.bin"] if f < 1 else [])
+    seen, uniq = set(), []                         # the local dry run uses one size for all three, so ids can repeat
+    for s in specs:
+        if s["id"] not in seen:
+            seen.add(s["id"])
+            uniq.append(s)
+    return uniq
+
+
 def bench(src, data, specs, compile_=True, steps=20):
     out = {}
     for key in sorted({(s["arm"], s["size"]) for s in specs}, key=lambda k: (C.non_embedding_params(k[1]), k[0])):
@@ -253,6 +286,7 @@ def train_grid(src, data, specs, runs_dir, drive_runs=None, max_hours=0.0, compi
         cmd = [sys.executable, str(pathlib.Path(src) / "mp_train.py"), "--root", str(data), "--arm", s["arm"], "--size", s["size"], "--out", str(out),
                "--tokens", str(s["tokens"]), "--device", "cpu" if LOCAL else "cuda"]
         cmd += ["--grabar"] if s["grabar"] else []
+        cmd += [str(x) for x in s.get("args", [])]                 # letters study: --pools, --seed, --w-file, --w-share
         cmd += ["--compile"] if compile_ and not LOCAL else []
         cmd += ["--mirror", str(pathlib.Path(drive_runs) / s["id"])] if drive_runs else []
         cmd += ["--stop-at", str(stop_at)] if stop_at else []

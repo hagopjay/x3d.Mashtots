@@ -1,4 +1,4 @@
-# Mashtots PoC (build v1.1, shared-kernel edition) as extra cells for the SHARED Colab G4 kernel (the Unreal lane's notebook 07).
+# Mashtots PoC (build v1.2, shared-kernel edition; v1.2 adds the letters study, see mashtots_letters_cells.py) as extra cells for the SHARED Colab G4 kernel (the Unreal lane's notebook 07).
 # Paste each "# %%" block as its own cell, at the end of the notebook, and run them top to bottom: MSH-0 first, then in order.
 # Hardware these numbers are for: Colab G4 = NVIDIA RTX PRO 6000 Blackwell Server Edition, 96 GB, driver 580.82.07, 48 CPUs, 177 GB RAM.
 # Written 15 Nov 2026 by Claude for hagopjay. Source: github.com/hagopjay/x3d.Mashtots poc/ (branch claude/project-thread-c75a5a).
@@ -49,7 +49,7 @@ del _msh_types
 def _msh():
     import os, sys, json, shutil, subprocess, hashlib, time
     MSH.ROOT = os.environ.get("MSH_ROOT", "/content/mashtots")     # MSH_ROOT is set only by the sandbox rehearsal
-    MSH.VERSION = "mashtots-poc v1.1 (shared-kernel edition)"
+    MSH.VERSION = "mashtots-poc v1.2 (shared-kernel edition)"
     os.makedirs(MSH.ROOT, exist_ok=True)
     UNREAL = ("UnrealEditor", "UnrealBuildTool", "ShaderCompileWorker", "CrashReportClient", "blender")   # plus the VRAM and utilisation tests below (they catch Chromium benches too)
     def gpu_state():
@@ -135,14 +135,14 @@ def _msh():
 _msh(); del _msh
 
 # %%
-#@title MSH-2 · Source code from Drive (CPU, ~5 s). Needs MyDrive/x3dlab/mashtots/mashtots_src_v1.1.tar.gz
-MSH_BUNDLE_SHA256 = "4bb9e29f41bdce28bd77930dbe2a7656832b462fc9535eebd97c7dbecf59fe6c"
+#@title MSH-2 · Source code from Drive (CPU, ~5 s). Needs MyDrive/x3dlab/mashtots/mashtots_src_v1.2.tar.gz
+MSH_BUNDLE_SHA256 = "8588fcfaae860351e420fd39a7e6619367c034f91adc996241f503c4d281945f"
 def _msh():
     import os, sys, tarfile, hashlib, shutil, pathlib, importlib
     if MSH.IN_COLAB and not os.path.ismount("/content/drive"):
         from google.colab import drive
         drive.mount("/content/drive")                       # no force_remount: if the Unreal lane mounted it, this is skipped
-    bundle = pathlib.Path(os.environ.get("MSH_BUNDLE", f"{MSH.DRIVE_DIR}/mashtots_src_v1.1.tar.gz"))
+    bundle = pathlib.Path(os.environ.get("MSH_BUNDLE", f"{MSH.DRIVE_DIR}/mashtots_src_v1.2.tar.gz"))
     h = hashlib.sha256(bundle.read_bytes()).hexdigest()
     print("bundle", bundle, bundle.stat().st_size, "bytes, sha256", h[:16])
     if MSH_BUNDLE_SHA256.startswith("__"):
@@ -269,7 +269,7 @@ _msh(); del _msh
 # %%
 #@title MSH-9 · FREEZE the pre-registration and the code before any model trains (instant)
 def _msh():
-    MSH.FROZEN = MSH.H.freeze(MSH.SRC, MSH.DATA, MSH.PROFILE, dict(build="v1.1-shared", run=MSH.RUN_NAME, hardware=MSH.HWCARD["gpu"]))
+    MSH.FROZEN = MSH.H.freeze(MSH.SRC, MSH.DATA, MSH.PROFILE, dict(build="v1.2-shared", run=MSH.RUN_NAME, hardware=MSH.HWCARD["gpu"]))
     MSH.H.checkpoint(MSH.DATA, MSH.DRIVE_OUT, ["PREREG.md", "PREREG.sha256"])
 _msh(); del _msh
 
