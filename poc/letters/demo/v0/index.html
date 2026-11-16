@@ -1,0 +1,267 @@
+<title>Letter Constellation</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Armenian:wght@400;600&family=Spectral:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<script>
+/* The viewer lets a page fetch only its own files, so X_ITE's helper files are served from xite/. */
+(() => {
+  const CDN = "https://cdn.jsdelivr.net/npm/x_ite@16.5.1/dist/assets/lib/";
+  const real = window.fetch.bind(window);
+  window.fetch = (input, init) => {
+    const u = typeof input === "string" ? input : (input && input.url) || String(input);
+    return u.startsWith(CDN) ? real("xite/" + u.slice(CDN.length), init) : real(input, init);
+  };
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/x_ite@16.5.1/dist/x_ite.min.js"></script>
+<script type="text/x-css" id="xite-css">/* X_ITE v16.5.1 */:host,X3DCanvas{--red:#d71f1f;--orange:#ff9230;--orange-filter:brightness(0) saturate(100%) invert(71%) sepia(100%) saturate(1647%) hue-rotate(335deg) brightness(101%) contrast(101%);--text-color:#fff;--text-color-dark:#fff;--text-shadow-color:#000;--link-color:var(--orange);--progress-background:#fff;--splash-screen-background:#0f0f0f;--splash-screen-image:none;--gradient:linear-gradient(180deg,rgba(35,37,40,.553) 0%,rgba(13,16,21,.831));--border:4px solid rgba(43,45,47,.675);--button-border:1px solid hsla(0,0%,100%,.1);--tint-color:rgba(50,50,50,.44);--tint-hover-color:rgba(64,64,64,.44);--table-tint-color:hsla(0,0%,100%,.083);--icon-filter:none}@media (prefers-color-scheme:light){:host(:not([theme=dark])),X3DCanvas:not([theme=dark]){--red:#e12b2b;--orange-filter:brightness(0) saturate(100%) invert(71%) sepia(100%) saturate(2647%) hue-rotate(335deg) brightness(70%) contrast(121%);--text-color:#000;--text-shadow-color:#fff;--link-color:var(--red);--progress-background:#000;--splash-screen-background:#fcfcfc;--splash-screen-image:none;--gradient:linear-gradient(180deg,rgba(247,247,252,.642) 0%,hsla(252,8%,88%,.6));--border:4px solid rgba(229,229,234,.66);--button-border:1px solid hsla(0,0%,100%,.49);--tint-color:hsla(0,0%,100%,.37);--tint-hover-color:hsla(0,0%,100%,.46);--table-tint-color:var(--tint-color);--icon-filter:invert(100%)}}:host([theme=light]),X3DCanvas[theme=light]{--red:#e12b2b;--orange-filter:brightness(0) saturate(100%) invert(71%) sepia(100%) saturate(2647%) hue-rotate(335deg) brightness(70%) contrast(121%);--text-color:#000;--text-shadow-color:#fff;--link-color:var(--red);--progress-background:#000;--splash-screen-background:#fcfcfc;--splash-screen-image:none;--gradient:linear-gradient(180deg,rgba(247,247,252,.642) 0%,hsla(252,8%,88%,.6));--border:4px solid rgba(229,229,234,.66);--button-border:1px solid hsla(0,0%,100%,.49);--tint-color:hsla(0,0%,100%,.37);--tint-hover-color:hsla(0,0%,100%,.46);--table-tint-color:var(--tint-color);--icon-filter:invert(100%)}:host,X3DCanvas{all:initial;display:inline-block;height:150px;overflow:hidden;-webkit-user-select:none;user-select:none;width:300px}:host(.x_ite-fullscreen),X3DCanvas.x_ite-fullscreen{height:100vh!important;width:100vw!important}X3DCanvas>:not(.x_ite-private-browser,.x_ite-private-menu){display:none}.x_ite-private-browser,.x_ite-private-browser *,.x_ite-private-menu,.x_ite-private-menu *{all:revert}.x_ite-private-browser{height:100%;outline:none;overflow:hidden;position:relative;-webkit-user-select:none;user-select:none}.x_ite-private-surface{height:100%}.x_ite-private-canvas{height:100%;width:100%}.x_ite-private-notification{backdrop-filter:blur(8px);background:var(--gradient);background-clip:padding-box;border:var(--border);border-bottom-left-radius:16px;border-right:none;border-top-left-radius:16px;color:var(--text-color);font-family:X_ITE PT Sans,sans-serif;font-size:10pt;line-height:1.1;padding:5px 0 3px 7px;pointer-events:none;position:absolute;right:0;top:20px;visibility:hidden;white-space:pre;width:0}.x_ite-private-notification span{background:none no-repeat top -1px left 0;background-size:17px 17px;display:inline-block;padding:0 16px 2px 22px;position:relative;top:-1px}.x_ite-private-browser-timings{backdrop-filter:blur(8px);background:var(--gradient);background-clip:padding-box;border-right:var(--border);border-top:var(--border);border-top-right-radius:12px;bottom:0;color:var(--text-color);font-family:X_ITE PT Sans,sans-serif;font-size:9pt;left:0;padding:8px 12px 10px;pointer-events:none;position:absolute;white-space:pre}.x_ite-private-browser-timings :is(table,thead,tbody,tfoot,tr,th,td){box-sizing:border-box;color:var(--text-color);font-size:inherit;line-height:1.1;text-align:left}.x_ite-private-browser-timings table{border-collapse:separate;border-spacing:2px;empty-cells:show;max-width:100%;overflow:hidden;width:100%}.x_ite-private-browser-timings thead th{background:none no-repeat -1px 1px;background-size:17px 17px;color:var(--text-color-dark);filter:var(--icon-filter);font-weight:700;padding-bottom:5px;padding-left:20px;padding-top:3px}.x_ite-private-browser-timings td:first-child{padding-right:10px}.x_ite-private-browser-timings table.more tr.x_ite-private-more td{padding-bottom:5px}.x_ite-private-browser-timings table.less tr.x_ite-private-more~tr{display:none}.x_ite-private-browser-timings td{padding-bottom:2px}.x_ite-private-browser-timings td.pointer{pointer-events:all}.x_ite-private-browser-timings tfoot td:first-child{padding-right:0}.x_ite-private-browser-timings tfoot td{padding-top:4px}.x_ite-private-browser-timings button{background:var(--tint-color);border:var(--button-border);border-radius:10px;box-sizing:border-box;color:var(--text-color);cursor:pointer;font-family:X_ITE PT Sans,sans-serif;font-size:9pt;font-style:italic;height:14pt;line-height:1.1;margin-top:2px;padding:0;pointer-events:all;text-align:center;width:100%}.x_ite-private-browser-timings button:hover{background-color:var(--tint-hover-color)}.x_ite-private-world-info-overlay{inset:0;position:absolute}.x_ite-private-world-info{backdrop-filter:blur(8px);background:var(--gradient);background-clip:padding-box;border:var(--border);border-radius:15px;inset:0;margin:21pt;overflow-y:auto;padding:0 21pt 21pt;position:absolute}.x_ite-private-world-info .x_ite-private-world-info-buttons{border-bottom:4px solid var(--table-tint-color);margin-bottom:12pt}.x_ite-private-world-info button{background:none;border:none;color:var(--text-color);height:21pt;width:100pt}.x_ite-private-world-info button:hover{background-color:var(--table-tint-color)}.x_ite-private-world-info button.active{font-weight:700}.x_ite-private-world-info :is(.x_ite-private-world-info-top,.x_ite-private-world-info-title,.x_ite-private-world-info-info,p){box-sizing:border-box;color:var(--text-color);font-family:X_ITE PT Sans,sans-serif;font-style:normal;line-height:1.3;text-align:left}.x_ite-private-world-info .x_ite-private-world-info-top{font-size:9pt;font-style:italic;font-weight:700;margin:.3em 0}.x_ite-private-world-info .x_ite-private-world-info-title{font-size:16pt;font-weight:700;margin:.3em 0;overflow-wrap:break-word;word-break:break-word}.x_ite-private-world-info .x_ite-private-world-info-info,.x_ite-private-world-info .x_ite-private-world-info-info p{font-size:11pt;margin:.5em 0;overflow-wrap:break-word;word-break:break-word}.x_ite-private-world-info table{border-collapse:collapse;line-height:1.3;margin:.5em 0;width:100%}.x_ite-private-world-info tr:nth-child(odd){background-color:var(--table-tint-color)}.x_ite-private-world-info td{color:var(--text-color);font-family:X_ITE PT Sans,sans-serif;font-size:10pt;overflow-wrap:break-word;padding:4pt;vertical-align:top;word-break:break-word}.x_ite-private-world-info td:first-child{min-width:70px}.x_ite-private-world-info a{color:var(--link-color)}.x_ite-private-menu.context-menu-layer{inset:0;position:fixed;z-index:10000}.x_ite-private-menu .context-menu-list,.x_ite-private-menu.context-menu-list{border:4px solid transparent;border-radius:12px;box-sizing:border-box;color:var(--text-color);display:none;font-family:X_ITE PT Sans,sans-serif;font-size:10pt;line-height:1.2;list-style-type:none;margin:0 0 0 1px;min-width:120px;overscroll-behavior:none;padding:5px 10px 6px 9px;white-space:pre}.x_ite-private-menu.context-menu-list{isolation:isolate;position:fixed;z-index:10000}.x_ite-private-menu .context-menu-list{position:absolute;top:-13px}.x_ite-private-menu .context-menu-background{backdrop-filter:blur(8px);background:var(--gradient);background-clip:padding-box;border:var(--border);border-radius:12px;box-sizing:border-box;inset:0;margin:0 0 0 1px;min-width:120px;outline:none;padding:5px 10px 9px 9px;position:absolute}.x_ite-private-menu .context-menu-item{border-radius:12px;cursor:pointer;font-size:10pt;line-height:1;margin:0;margin:0 4px;padding:0 2px;position:relative;text-align:left}.x_ite-private-menu .context-menu-item:first-of-type{margin-top:4px}.x_ite-private-menu .context-menu-item:last-of-type{margin-bottom:4px}.x_ite-private-menu .context-menu-item:hover:not(.context-menu-not-selectable){background-color:var(--red)}.x_ite-private-menu .context-menu-item:hover>.context-menu-list{display:block}.x_ite-private-menu .context-menu-not-selectable{cursor:default}.x_ite-private-menu .context-menu-separator{border-bottom:1px solid #8a8a8a;border-top:0;cursor:default;margin:2px 0;padding-bottom:0;padding-top:0}.x_ite-private-menu .context-menu-separator+.context-menu-separator{display:none!important}.x_ite-private-menu .context-menu-submenu:after{border-color:transparent transparent transparent #e8eaed;border-style:solid;border-width:4px 0 4px 5px;content:"";display:block;filter:var(--icon-filter);height:0;margin-right:2px;position:absolute;right:4px;top:8px;width:0}.x_ite-private-menu .context-menu-item>span,.x_ite-private-menu label{display:block;padding:5px 24px;width:100%}.x_ite-private-menu label{box-sizing:border-box;cursor:pointer;font-size:10pt;font-weight:400;line-height:1;margin:0}.x_ite-private-menu label span{color:var(--text-color-dark);filter:var(--icon-filter)}.x_ite-private-menu label:has(>input[type=radio]:checked){font-weight:700}.x_ite-private-menu label>*{font-size:10pt;line-height:1;vertical-align:top}.x_ite-private-menu input{appearance:none;cursor:pointer}.x_ite-private-menu input[type=checkbox],.x_ite-private-menu input[type=radio]{background:none no-repeat left 0 top 0;background-size:17px 17px;display:inline-block;filter:var(--icon-filter);height:17px;margin:0 0 0 -22px;padding:0;position:absolute;top:3px;width:17px}.x_ite-private-menu input:checked{filter:var(--orange-filter)}.x_ite-private-menu .context-menu-input:hover input:checked{filter:var(--icon-filter)}.x_ite-private-menu input[type=checkbox]:checked{background-image:none}.x_ite-private-menu input[type=radio]:checked{background-image:none}.x_ite-private-menu span{padding-left:0}.x_ite-private-menu .context-menu-title{font-weight:700}.x_ite-private-menu .context-menu-icon>span{background-position:2px 3px;background-repeat:no-repeat;background-size:17px 17px;color:var(--text-color-dark);display:block;filter:var(--icon-filter)}.x_ite-private-menu .x_ite-private-icon-logo>span{background-image:none;background-position:2px 4px;color:var(--text-color);filter:none}.x_ite-private-icon-viewpoint>span{background-image:none}.x_ite-private-menu .x_ite-private-viewpoint input{background-image:none}.x_ite-private-menu .x_ite-private-viewpoint input:checked{background-image:none}.x_ite-private-icon-viewer>span{background-image:none}.x_ite-private-menu .x_ite-private-examine-viewer :is(input,input:checked){background-image:none}.x_ite-private-menu .x_ite-private-walk-viewer :is(input,input:checked){background-image:none}.x_ite-private-menu .x_ite-private-fly-viewer :is(input,input:checked){background-image:none}.x_ite-private-menu .x_ite-private-plane-viewer :is(input,input:checked){background-image:none}.x_ite-private-menu .x_ite-private-lookat-viewer :is(input,input:checked){background-image:none}.x_ite-private-menu .x_ite-private-none-viewer :is(input,input:checked){background-image:none}.x_ite-private-icon-primitive-quality>span{background-image:none}.x_ite-private-icon-texture-quality>span{background-image:none}.x_ite-private-icon-shading>span{background-image:none}.x_ite-private-icon-animations>span{background-image:none}.x_ite-private-icon-play>span{background-image:none}.x_ite-private-icon-stop>span{background-image:none}.x_ite-private-icon-enter-fullscreen>span{background-image:none}.x_ite-private-icon-leave-fullscreen>span{background-image:none}.x_ite-private-icon-world-info>span{background-image:none}.x_ite-private-icon-info>span{background-image:none}.x_ite-private-splash-screen{background:var(--splash-screen-image) var(--splash-screen-background);background-position:calc(50% - 30px) calc(50% + 58px);inset:0;pointer-events:none;position:absolute}.x_ite-private-spinner{--offset-x:100px;--offset-y:-48px;--size:32px;--padding:8px;--center-x:calc(var(--size)*0.44727 + var(--padding));--center-y:calc(var(--size)*0.52637 + var(--padding));animation:x_ite-spinner-animation 8s linear infinite;background:none no-repeat 50%;background-size:var(--size) var(--size);height:var(--size);left:calc(50% - var(--size)/2 + var(--size)/2 - var(--center-x) + var(--offset-x));padding:var(--padding);position:absolute;top:calc(50% - var(--size)/2 + var(--size)/2 - var(--center-y) + var(--offset-y));transform-origin:var(--center-x) var(--center-y);width:var(--size)}@keyframes x_ite-spinner-animation{to{transform:rotate(1turn)}}.x_ite-private-progress{left:calc(50% - 100px);position:absolute;top:calc(50% - 39pt);width:195px}.x_ite-private-x_ite{color:var(--text-color);font-family:X_ITE PT Sans,sans-serif;font-size:32pt;text-align:center;text-shadow:1px 1px 0 var(--text-shadow-color)}.x_ite-private-x_ite b{font-family:X_ITE PT Sans,sans-serif;font-weight:700}.x_ite-private-spinner-text{color:var(--text-color);font-family:X_ITE PT Sans,sans-serif;font-size:11pt;text-align:center;text-shadow:1px 1px 0 var(--text-shadow-color)}.x_ite-private-progressbar{background:var(--progress-background);border-radius:4px;height:8px;margin:8px;overflow:hidden}.x_ite-private-progressbar div{background:var(--red);height:100%;width:0}.x_ite-private-buttons{align-items:center;background:var(--gradient);background-clip:padding-box;border:var(--border);border-radius:32px;bottom:10px;display:flex;gap:16px;justify-content:center;padding:0 24px 0 16px;position:absolute;right:-16px}.x_ite-private-buttons:is(:empty,:not(:has(:not(.x_ite-private-hidden)))){display:none;opacity:0}.x_ite-private-button{background-repeat:no-repeat;background-size:30px 30px;cursor:pointer;filter:var(--icon-filter);height:30px;width:30px}.x_ite-private-button:hover{scale:1.2}.x_ite-private-no-sound-button{background-image:none;order:1}.x_ite-private-xr-button{background-image:none;order:2}.x_ite-private-fade{opacity:1;transition:display allow-discrete .3s,opacity .3s ease-in-out}@starting-style{.x_ite-private-fade{opacity:0}}.x_ite-private-hidden{display:none;opacity:0}.x_ite-private-splash-screen.x_ite-private-fade{transition:none}.x_ite-private-splash-screen.x_ite-private-hidden{transition:display allow-discrete .2s,opacity .2s ease-in-out}.x_ite-private-button.x_ite-private-fade{transition:display allow-discrete 0s .3s,opacity .3s ease-in-out,scale .2s ease-in-out}@-moz-document url-prefix(){.x_ite-private-fade{transition:visibility .3s,opacity .3s ease-in-out}.x_ite-private-hidden{display:block;transition:visibility 0s .3s,opacity .3s ease-in-out;visibility:hidden}.x_ite-private-splash-screen.x_ite-private-hidden{transition:visibility 0s .2s,opacity .2s ease-in-out}.x_ite-private-button.x_ite-private-fade{transition:visibility 0s .3s,opacity .3s ease-in-out,scale .2s ease-in-out}.x_ite-private-button.x_ite-private-hidden{display:none}}</script>
+<style>
+/* Layout: a night sky on lapis, the live scene first, then the letter card beside it, then the flat chart and the notes.
+   One deliberate dark look (an illuminated manuscript at night), so no light variant. */
+:root {
+  color-scheme: dark;
+  --lapis: #0b1430;        /* page ground */
+  --lapis-2: #121d42;      /* panels */
+  --ink: #e9e3d3;          /* text */
+  --ink-2: #a9a69c;        /* quiet text */
+  --gold: #f2c46b;         /* Mashtots' 36 */
+  --vermilion: #e8553c;    /* lips */
+  --saffron: #f6a92e;      /* back of the tongue */
+  --turquoise: #41ccc7;    /* teeth */
+  --rose: #e873a8;         /* teeth, hissing */
+  --verdigris: #8dd15a;    /* palate, hushing */
+  --silver: #c7d6f2;       /* the later two */
+  --copper: #f5945f;       /* the ligature */
+  --rule: #24305c;
+  --f-hy: "Noto Serif Armenian", "Noto Serif", serif;
+  --f-text: "Spectral", Georgia, serif;
+  --f-data: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+html, body { background: var(--lapis); color: var(--ink); }
+body { font-family: var(--f-text); font-size: 17px; line-height: 1.55; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-block: 28px 64px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 28px; }
+header { display: grid; gap: 6px; }
+.hy { font-family: var(--f-hy); color: var(--gold); font-size: clamp(30px, 5vw, 52px); line-height: 1.1; margin: 0; text-wrap: balance; letter-spacing: 0.01em; }
+h1 { font-family: var(--f-text); font-weight: 500; font-size: clamp(20px, 2.6vw, 26px); margin: 0; color: var(--ink); }
+.lede { max-width: 68ch; color: var(--ink-2); margin: 4px 0 0; }
+.stage { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 20px; align-items: start; }
+@media (max-width: 860px) { .stage { grid-template-columns: minmax(0, 1fr); } }
+.sky { position: relative; background: radial-gradient(ellipse at 50% 40%, #16245a 0%, var(--lapis) 70%); border: 1px solid var(--rule); border-radius: 6px; overflow: hidden; aspect-ratio: 4 / 3; max-width: 100%; }
+x3d-canvas { width: 100%; height: 100%; display: block; }
+.sky .poster { position: absolute; inset: 0; display: grid; place-items: center; pointer-events: none; transition: opacity .6s; }
+.sky .poster.gone { opacity: 0; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+button { font-family: var(--f-data); font-size: 13px; color: var(--ink); background: var(--lapis-2); border: 1px solid var(--rule); border-radius: 4px; padding: 6px 10px; cursor: pointer; }
+button[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); }
+button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.status { font-family: var(--f-data); font-size: 12px; color: var(--ink-2); margin-top: 6px; min-height: 1.4em; }
+.card { background: var(--lapis-2); border: 1px solid var(--rule); border-radius: 6px; padding: 18px; display: grid; gap: 10px; min-width: 0; }
+.card .glyph { font-family: var(--f-hy); font-size: 72px; line-height: 1; color: var(--gold); }
+.card .glyph small { font-size: 36px; color: var(--ink-2); margin-left: 8px; }
+.card dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 0; font-size: 15px; }
+.card dt { color: var(--ink-2); font-family: var(--f-data); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; padding-top: 3px; }
+.card dd { margin: 0; }
+.card .hint { color: var(--ink-2); font-size: 14px; }
+.ipa { font-family: var(--f-data); }
+.finding { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px; align-items: center; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding-block: 22px; }
+@media (max-width: 640px) { .finding { grid-template-columns: minmax(0, 1fr); } }
+.big { font-family: var(--f-data); font-size: clamp(40px, 7vw, 64px); color: var(--gold); line-height: 1; font-variant-numeric: tabular-nums; }
+.big span { font-size: 0.4em; color: var(--ink-2); }
+.finding p { margin: 0; max-width: 70ch; }
+.sets { display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 10px; font-family: var(--f-hy); font-size: 22px; }
+.sets span { display: inline-flex; gap: 6px; align-items: baseline; }
+.sets em { font-family: var(--f-data); font-style: normal; font-size: 12px; color: var(--ink-2); }
+.chart-wrap { overflow-x: auto; }
+svg.chart { width: 100%; min-width: 560px; height: auto; display: block; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 14px; color: var(--ink-2); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+.notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.notes section { min-width: 0; }
+.notes h2 { font-family: var(--f-data); font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-2); margin: 0 0 8px; }
+.notes p, .notes li { font-size: 15px; margin: 0 0 8px; }
+.notes ul { padding-left: 18px; margin: 0; }
+.grade { font-family: var(--f-data); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; border: 1px solid var(--rule); border-radius: 3px; padding: 1px 5px; color: var(--ink-2); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { .sky .poster { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="hy" lang="hyw">Տառերու համաստեղութիւն</p>
+    <h1>Letter Constellation</h1>
+    <p class="lede">Each star is an Armenian letter. A small language model read four gigabytes of Armenian and learned a vector for every letter; letters it treats alike sit close together here. Nobody told it how the letters sound.</p>
+  </header>
+
+  <div class="stage">
+    <div>
+      <div class="sky">
+        <x3d-canvas id="scene" splashScreen="false" notifications="false" contextMenu="false" timings="false" cache="true"></x3d-canvas>
+        <div class="poster" id="poster" aria-hidden="true"></div>
+      </div>
+      <div class="controls" role="group" aria-label="Scene controls">
+        <button type="button" id="b-spin" aria-pressed="true">Turning</button>
+        <button type="button" id="b-threads" aria-pressed="true">Nearest-neighbour threads</button>
+        <button type="button" id="b-sets" aria-pressed="true">The five sets</button>
+        <span id="vps" class="controls" style="margin:0"></span>
+        <button type="button" id="b-morph" aria-pressed="false" hidden>Eastern ⇄ Western</button>
+      </div>
+      <p class="status" id="status">Loading the sky…</p>
+    </div>
+    <aside class="card" id="card" aria-live="polite"></aside>
+  </div>
+
+  <div class="finding">
+    <div class="big" id="big"></div>
+    <div>
+      <p id="finding-text"></p>
+      <div class="sets" id="sets"></div>
+    </div>
+  </div>
+
+  <section>
+    <div class="chart-wrap"><svg class="chart" id="chart" role="img" aria-label="Flat star chart of the letters, seen from the front"></svg></div>
+    <div class="legend" id="legend"></div>
+  </section>
+
+  <div class="notes">
+    <section>
+      <h2>How to read it</h2>
+      <p>Drag to turn the sky; click a letter to read its card. Threads join each letter to its two nearest letters in the model. A coloured thread means both ends belong to the same set of three.</p>
+      <p>Gold letters are Mashtots' 36. Silver Օ and Ֆ arrived around the 12th century. Copper և is the ligature of ե and ւ.</p>
+    </section>
+    <section>
+      <h2>Where the numbers come from</h2>
+      <ul id="sources"></ul>
+    </section>
+    <section>
+      <h2>What is next</h2>
+      <p>A letters-only model, trained once on Eastern and once on Western text, will give every symbol a learned place, including Օ, Ֆ and և. The sky will then move between the two dialects. The Western half grows as the diaspora's texts are added.</p>
+    </section>
+  </div>
+</div>
+
+<script id="data" type="application/json">{"schema": "mashtots-constellation/1", "source": "mashtots-40M input embeddings (core run g4a, 2026-11-15 09:56:54 UTC)", "grade": "Measured", "variants": ["EW"], "placed_by_hand": ["Օ", "Ֆ", "և"], "letters": [{"index": 0, "upper": "Ա", "lower": "ա", "name": "այբ", "latin": "ayb", "numeral": 1, "group": "mashtots", "ipa_east": "ɑ", "ipa_west": "ɑ", "sound_differs": false, "triad": null, "reform": null}, {"index": 1, "upper": "Բ", "lower": "բ", "name": "բեն", "latin": "ben", "numeral": 2, "group": "mashtots", "ipa_east": "b", "ipa_west": "pʰ", "sound_differs": true, "triad": "lips", "reform": null}, {"index": 2, "upper": "Գ", "lower": "գ", "name": "գիմ", "latin": "gim", "numeral": 3, "group": "mashtots", "ipa_east": "ɡ", "ipa_west": "kʰ", "sound_differs": true, "triad": "back of the tongue", "reform": null}, {"index": 3, "upper": "Դ", "lower": "դ", "name": "դա", "latin": "da", "numeral": 4, "group": "mashtots", "ipa_east": "d", "ipa_west": "tʰ", "sound_differs": true, "triad": "teeth", "reform": null}, {"index": 4, "upper": "Ե", "lower": "ե", "name": "եչ", "latin": "yech", "numeral": 5, "group": "mashtots", "ipa_east": "ɛ, jɛ-", "ipa_west": "ɛ, jɛ-", "sound_differs": false, "triad": null, "reform": "takes over from է in the reformed spelling"}, {"index": 5, "upper": "Զ", "lower": "զ", "name": "զա", "latin": "za", "numeral": 6, "group": "mashtots", "ipa_east": "z", "ipa_west": "z", "sound_differs": false, "triad": null, "reform": null}, {"index": 6, "upper": "Է", "lower": "է", "name": "է", "latin": "e", "numeral": 7, "group": "mashtots", "ipa_east": "ɛ", "ipa_west": "ɛ", "sound_differs": false, "triad": null, "reform": "classical է inside words, reformed ե"}, {"index": 7, "upper": "Ը", "lower": "ը", "name": "ըթ", "latin": "et", "numeral": 8, "group": "mashtots", "ipa_east": "ə", "ipa_west": "ə", "sound_differs": false, "triad": null, "reform": null}, {"index": 8, "upper": "Թ", "lower": "թ", "name": "թօ", "latin": "to", "numeral": 9, "group": "mashtots", "ipa_east": "tʰ", "ipa_west": "tʰ", "sound_differs": false, "triad": "teeth", "reform": null}, {"index": 9, "upper": "Ժ", "lower": "ժ", "name": "ժէ", "latin": "zhe", "numeral": 10, "group": "mashtots", "ipa_east": "ʒ", "ipa_west": "ʒ", "sound_differs": false, "triad": null, "reform": null}, {"index": 10, "upper": "Ի", "lower": "ի", "name": "ինի", "latin": "ini", "numeral": 20, "group": "mashtots", "ipa_east": "i", "ipa_west": "i", "sound_differs": false, "triad": null, "reform": null}, {"index": 11, "upper": "Լ", "lower": "լ", "name": "լիւն", "latin": "lyun", "numeral": 30, "group": "mashtots", "ipa_east": "l", "ipa_west": "l", "sound_differs": false, "triad": null, "reform": null}, {"index": 12, "upper": "Խ", "lower": "խ", "name": "խէ", "latin": "khe", "numeral": 40, "group": "mashtots", "ipa_east": "χ", "ipa_west": "χ", "sound_differs": false, "triad": null, "reform": null}, {"index": 13, "upper": "Ծ", "lower": "ծ", "name": "ծա", "latin": "tsa", "numeral": 50, "group": "mashtots", "ipa_east": "ts", "ipa_west": "dz", "sound_differs": true, "triad": "teeth, hissing", "reform": null}, {"index": 14, "upper": "Կ", "lower": "կ", "name": "կեն", "latin": "ken", "numeral": 60, "group": "mashtots", "ipa_east": "k", "ipa_west": "ɡ", "sound_differs": true, "triad": "back of the tongue", "reform": null}, {"index": 15, "upper": "Հ", "lower": "հ", "name": "հօ", "latin": "ho", "numeral": 70, "group": "mashtots", "ipa_east": "h", "ipa_west": "h", "sound_differs": false, "triad": null, "reform": null}, {"index": 16, "upper": "Ձ", "lower": "ձ", "name": "ձա", "latin": "dza", "numeral": 80, "group": "mashtots", "ipa_east": "dz", "ipa_west": "tsʰ", "sound_differs": true, "triad": "teeth, hissing", "reform": null}, {"index": 17, "upper": "Ղ", "lower": "ղ", "name": "ղատ", "latin": "ghat", "numeral": 90, "group": "mashtots", "ipa_east": "ʁ", "ipa_west": "ʁ", "sound_differs": false, "triad": null, "reform": null}, {"index": 18, "upper": "Ճ", "lower": "ճ", "name": "ճէ", "latin": "che", "numeral": 100, "group": "mashtots", "ipa_east": "tʃ", "ipa_west": "dʒ", "sound_differs": true, "triad": "palate, hushing", "reform": null}, {"index": 19, "upper": "Մ", "lower": "մ", "name": "մէն", "latin": "men", "numeral": 200, "group": "mashtots", "ipa_east": "m", "ipa_west": "m", "sound_differs": false, "triad": null, "reform": null}, {"index": 20, "upper": "Յ", "lower": "յ", "name": "յի", "latin": "hi", "numeral": 300, "group": "mashtots", "ipa_east": "j", "ipa_west": "j, h-", "sound_differs": true, "triad": null, "reform": "classical word-initial յ (Յակոբ), reformed հ (Հակոբ)"}, {"index": 21, "upper": "Ն", "lower": "ն", "name": "նու", "latin": "nu", "numeral": 400, "group": "mashtots", "ipa_east": "n", "ipa_west": "n", "sound_differs": false, "triad": null, "reform": null}, {"index": 22, "upper": "Շ", "lower": "շ", "name": "շա", "latin": "sha", "numeral": 500, "group": "mashtots", "ipa_east": "ʃ", "ipa_west": "ʃ", "sound_differs": false, "triad": null, "reform": null}, {"index": 23, "upper": "Ո", "lower": "ո", "name": "ո", "latin": "vo", "numeral": 600, "group": "mashtots", "ipa_east": "vɔ-, ɔ", "ipa_west": "vɔ-, ɔ", "sound_differs": false, "triad": null, "reform": "classical ո / ով, reformed վո- word-initially"}, {"index": 24, "upper": "Չ", "lower": "չ", "name": "չա", "latin": "cha", "numeral": 700, "group": "mashtots", "ipa_east": "tʃʰ", "ipa_west": "tʃʰ", "sound_differs": false, "triad": "palate, hushing", "reform": null}, {"index": 25, "upper": "Պ", "lower": "պ", "name": "պէ", "latin": "pe", "numeral": 800, "group": "mashtots", "ipa_east": "p", "ipa_west": "b", "sound_differs": true, "triad": "lips", "reform": null}, {"index": 26, "upper": "Ջ", "lower": "ջ", "name": "ջէ", "latin": "je", "numeral": 900, "group": "mashtots", "ipa_east": "dʒ", "ipa_west": "tʃʰ", "sound_differs": true, "triad": "palate, hushing", "reform": null}, {"index": 27, "upper": "Ռ", "lower": "ռ", "name": "ռա", "latin": "ra", "numeral": 1000, "group": "mashtots", "ipa_east": "r", "ipa_west": "r", "sound_differs": false, "triad": null, "reform": null}, {"index": 28, "upper": "Ս", "lower": "ս", "name": "սէ", "latin": "se", "numeral": 2000, "group": "mashtots", "ipa_east": "s", "ipa_west": "s", "sound_differs": false, "triad": null, "reform": null}, {"index": 29, "upper": "Վ", "lower": "վ", "name": "վեւ", "latin": "vev", "numeral": 3000, "group": "mashtots", "ipa_east": "v", "ipa_west": "v", "sound_differs": false, "triad": null, "reform": "reformed վ where classical writes ւ"}, {"index": 30, "upper": "Տ", "lower": "տ", "name": "տիւն", "latin": "tyun", "numeral": 4000, "group": "mashtots", "ipa_east": "t", "ipa_west": "d", "sound_differs": true, "triad": "teeth", "reform": null}, {"index": 31, "upper": "Ր", "lower": "ր", "name": "րէ", "latin": "re", "numeral": 5000, "group": "mashtots", "ipa_east": "ɾ", "ipa_west": "ɾ", "sound_differs": false, "triad": null, "reform": null}, {"index": 32, "upper": "Ց", "lower": "ց", "name": "ցօ", "latin": "tso", "numeral": 6000, "group": "mashtots", "ipa_east": "tsʰ", "ipa_west": "tsʰ", "sound_differs": false, "triad": "teeth, hissing", "reform": null}, {"index": 33, "upper": "Ւ", "lower": "ւ", "name": "հիւն", "latin": "hyun", "numeral": 7000, "group": "mashtots", "ipa_east": "v (in ու: u)", "ipa_west": "v (in ու: u)", "sound_differs": false, "triad": null, "reform": "classical իւ / աւ / եւ, reformed յու / օ / և"}, {"index": 34, "upper": "Փ", "lower": "փ", "name": "փիւր", "latin": "pyur", "numeral": 8000, "group": "mashtots", "ipa_east": "pʰ", "ipa_west": "pʰ", "sound_differs": false, "triad": "lips", "reform": null}, {"index": 35, "upper": "Ք", "lower": "ք", "name": "քէ", "latin": "ke", "numeral": 9000, "group": "mashtots", "ipa_east": "kʰ", "ipa_west": "kʰ", "sound_differs": false, "triad": "back of the tongue", "reform": null}, {"index": 36, "upper": "Օ", "lower": "օ", "name": "օ", "latin": "o", "numeral": null, "group": "later", "ipa_east": "ɔ", "ipa_west": "ɔ", "sound_differs": false, "triad": null, "reform": "classical աւ, reformed օ"}, {"index": 37, "upper": "Ֆ", "lower": "ֆ", "name": "ֆէ", "latin": "fe", "numeral": null, "group": "later", "ipa_east": "f", "ipa_west": "f", "sound_differs": false, "triad": null, "reform": null}, {"index": 38, "upper": "ԵՒ", "lower": "և", "name": "եւ", "latin": "yev", "numeral": null, "group": "ligature", "ipa_east": "jɛv, ɛv", "ipa_west": "jɛv, ɛv", "sound_differs": false, "triad": null, "reform": "classical ե + ւ written as one sign; a letter of its own in the reformed spelling", "parts": ["Ե", "Ւ"]}], "positions": {"Ա": {"EW": [3.2057, -2.1434, 1.4453]}, "Բ": {"EW": [-1.6855, -3.2736, 1.8364]}, "Գ": {"EW": [-1.9561, -3.0229, -0.1701]}, "Դ": {"EW": [1.1304, 1.685, -4.0708]}, "Ե": {"EW": [1.7476, -3.7859, 1.8039]}, "Զ": {"EW": [-0.1743, 3.8345, -0.7584]}, "Է": {"EW": [3.3391, -1.0058, 3.6394]}, "Ը": {"EW": [5.0, -0.1822, -1.1227]}, "Թ": {"EW": [-0.1298, -3.4101, -1.8711]}, "Ժ": {"EW": [-4.4202, 0.0731, -0.4117]}, "Ի": {"EW": [4.3225, -2.2858, -0.5201]}, "Լ": {"EW": [-0.0156, -1.5336, -3.5685]}, "Խ": {"EW": [-1.9007, -1.287, 3.6247]}, "Ծ": {"EW": [-2.7994, 2.8569, 1.7576]}, "Կ": {"EW": [-0.0392, -4.1129, 0.012]}, "Հ": {"EW": [-0.3173, -2.0573, 2.9585]}, "Ձ": {"EW": [-3.2442, 3.4768, -0.6856]}, "Ղ": {"EW": [-0.5267, 4.2481, 1.6662]}, "Ճ": {"EW": [-3.4384, 0.3209, -2.2411]}, "Մ": {"EW": [2.072, -0.0075, -3.0446]}, "Յ": {"EW": [2.2357, 2.5302, 2.2106]}, "Ն": {"EW": [4.1459, 1.3988, -0.6946]}, "Շ": {"EW": [-3.5225, -2.0821, -0.7977]}, "Ո": {"EW": [3.895, 0.562, 1.9151]}, "Չ": {"EW": [-1.8034, -0.1923, -4.0355]}, "Պ": {"EW": [-3.054, -1.4851, 1.5387]}, "Ջ": {"EW": [-2.6532, 1.8787, -2.4284]}, "Ռ": {"EW": [-3.8199, 0.7969, 2.0759]}, "Ս": {"EW": [2.6373, 2.1332, -2.3879]}, "Վ": {"EW": [0.4654, 0.1577, 3.6822]}, "Տ": {"EW": [-1.5929, -2.7023, -2.7906]}, "Ր": {"EW": [2.0466, 4.1014, -0.2581]}, "Ց": {"EW": [-0.2206, 3.5076, -2.855]}, "Ւ": {"EW": [0.7262, 2.7731, 3.8075]}, "Փ": {"EW": [-1.8554, 1.1155, 3.5948]}, "Ք": {"EW": [2.1999, -2.8805, -2.8563]}, "Օ": {"EW": [-6.7973, -0.5, -3.1696]}, "Ֆ": {"EW": [-4.0848, -0.5, -6.29]}, "ԵՒ": {"EW": [1.2369, 0.6936, 2.8057]}}, "layout": {"EW": {"symbols": ["Ա", "Բ", "Գ", "Դ", "Ե", "Զ", "Է", "Ը", "Թ", "Ժ", "Ի", "Լ", "Խ", "Ծ", "Կ", "Հ", "Ձ", "Ղ", "Ճ", "Մ", "Յ", "Ն", "Շ", "Ո", "Չ", "Պ", "Ջ", "Ռ", "Ս", "Վ", "Տ", "Ր", "Ց", "Ւ", "Փ", "Ք"], "pos": [[3.2057, -2.1434, 1.4453], [-1.6855, -3.2736, 1.8364], [-1.9561, -3.0229, -0.1701], [1.1304, 1.685, -4.0708], [1.7476, -3.7859, 1.8039], [-0.1743, 3.8345, -0.7584], [3.3391, -1.0058, 3.6394], [5.0, -0.1822, -1.1227], [-0.1298, -3.4101, -1.8711], [-4.4202, 0.0731, -0.4117], [4.3225, -2.2858, -0.5201], [-0.0156, -1.5336, -3.5685], [-1.9007, -1.287, 3.6247], [-2.7994, 2.8569, 1.7576], [-0.0392, -4.1129, 0.012], [-0.3173, -2.0573, 2.9585], [-3.2442, 3.4768, -0.6856], [-0.5267, 4.2481, 1.6662], [-3.4384, 0.3209, -2.2411], [2.072, -0.0075, -3.0446], [2.2357, 2.5302, 2.2106], [4.1459, 1.3988, -0.6946], [-3.5225, -2.0821, -0.7977], [3.895, 0.562, 1.9151], [-1.8034, -0.1923, -4.0355], [-3.054, -1.4851, 1.5387], [-2.6532, 1.8787, -2.4284], [-3.8199, 0.7969, 2.0759], [2.6373, 2.1332, -2.3879], [0.4654, 0.1577, 3.6822], [-1.5929, -2.7023, -2.7906], [2.0466, 4.1014, -0.2581], [-0.2206, 3.5076, -2.855], [0.7262, 2.7731, 3.8075], [-1.8554, 1.1155, 3.5948], [2.1999, -2.8805, -2.8563]], "stress": 0.264, "note": "Eastern and Western mixed, 50/50", "neighbours": {"Ա": [{"symbol": "Ո", "cosine": 0.298}, {"symbol": "Ի", "cosine": 0.197}, {"symbol": "Է", "cosine": 0.172}], "Բ": [{"symbol": "Գ", "cosine": 0.293}, {"symbol": "Պ", "cosine": 0.272}, {"symbol": "Խ", "cosine": 0.24}], "Գ": [{"symbol": "Բ", "cosine": 0.293}, {"symbol": "Խ", "cosine": 0.251}, {"symbol": "Թ", "cosine": 0.248}], "Դ": [{"symbol": "Ս", "cosine": 0.273}, {"symbol": "Զ", "cosine": 0.221}, {"symbol": "Տ", "cosine": 0.171}], "Ե": [{"symbol": "Թ", "cosine": 0.197}, {"symbol": "Է", "cosine": 0.197}, {"symbol": "Վ", "cosine": 0.155}], "Զ": [{"symbol": "Դ", "cosine": 0.221}, {"symbol": "Ս", "cosine": 0.2}, {"symbol": "Ղ", "cosine": 0.199}], "Է": [{"symbol": "Ի", "cosine": 0.218}, {"symbol": "Ե", "cosine": 0.197}, {"symbol": "Ա", "cosine": 0.172}], "Ը": [{"symbol": "Ն", "cosine": 0.47}, {"symbol": "Ի", "cosine": 0.313}, {"symbol": "Է", "cosine": 0.149}], "Թ": [{"symbol": "Տ", "cosine": 0.349}, {"symbol": "Գ", "cosine": 0.248}, {"symbol": "Հ", "cosine": 0.219}], "Ժ": [{"symbol": "Ճ", "cosine": 0.26}, {"symbol": "Թ", "cosine": 0.204}, {"symbol": "Հ", "cosine": 0.197}], "Ի": [{"symbol": "Ը", "cosine": 0.313}, {"symbol": "Ն", "cosine": 0.22}, {"symbol": "Է", "cosine": 0.218}], "Լ": [{"symbol": "Տ", "cosine": 0.27}, {"symbol": "Պ", "cosine": 0.206}, {"symbol": "Թ", "cosine": 0.204}], "Խ": [{"symbol": "Հ", "cosine": 0.313}, {"symbol": "Գ", "cosine": 0.251}, {"symbol": "Բ", "cosine": 0.24}], "Ծ": [{"symbol": "Խ", "cosine": 0.218}, {"symbol": "Ձ", "cosine": 0.206}, {"symbol": "Ճ", "cosine": 0.186}], "Կ": [{"symbol": "Գ", "cosine": 0.244}, {"symbol": "Տ", "cosine": 0.218}, {"symbol": "Պ", "cosine": 0.217}], "Հ": [{"symbol": "Խ", "cosine": 0.313}, {"symbol": "Գ", "cosine": 0.237}, {"symbol": "Թ", "cosine": 0.219}], "Ձ": [{"symbol": "Ջ", "cosine": 0.268}, {"symbol": "Ծ", "cosine": 0.206}, {"symbol": "Ց", "cosine": 0.164}], "Ղ": [{"symbol": "Զ", "cosine": 0.199}, {"symbol": "Ր", "cosine": 0.193}, {"symbol": "Խ", "cosine": 0.161}], "Ճ": [{"symbol": "Ջ", "cosine": 0.318}, {"symbol": "Ժ", "cosine": 0.26}, {"symbol": "Չ", "cosine": 0.25}], "Մ": [{"symbol": "Ս", "cosine": 0.239}, {"symbol": "Ր", "cosine": 0.201}, {"symbol": "Պ", "cosine": 0.172}], "Յ": [{"symbol": "Խ", "cosine": 0.19}, {"symbol": "Հ", "cosine": 0.174}, {"symbol": "Ջ", "cosine": 0.158}], "Ն": [{"symbol": "Ը", "cosine": 0.47}, {"symbol": "Ի", "cosine": 0.22}, {"symbol": "Ս", "cosine": 0.216}], "Շ": [{"symbol": "Գ", "cosine": 0.24}, {"symbol": "Պ", "cosine": 0.222}, {"symbol": "Հ", "cosine": 0.219}], "Ո": [{"symbol": "Ա", "cosine": 0.298}, {"symbol": "Յ", "cosine": 0.15}, {"symbol": "Ի", "cosine": 0.144}], "Չ": [{"symbol": "Ճ", "cosine": 0.25}, {"symbol": "Լ", "cosine": 0.189}, {"symbol": "Թ", "cosine": 0.184}], "Պ": [{"symbol": "Փ", "cosine": 0.307}, {"symbol": "Բ", "cosine": 0.272}, {"symbol": "Գ", "cosine": 0.241}], "Ջ": [{"symbol": "Ճ", "cosine": 0.318}, {"symbol": "Ձ", "cosine": 0.268}, {"symbol": "Գ", "cosine": 0.229}], "Ռ": [{"symbol": "Հ", "cosine": 0.196}, {"symbol": "Ճ", "cosine": 0.172}, {"symbol": "Խ", "cosine": 0.172}], "Ս": [{"symbol": "Դ", "cosine": 0.273}, {"symbol": "Մ", "cosine": 0.239}, {"symbol": "Ն", "cosine": 0.216}], "Վ": [{"symbol": "Ւ", "cosine": 0.275}, {"symbol": "Հ", "cosine": 0.215}, {"symbol": "Գ", "cosine": 0.213}], "Տ": [{"symbol": "Թ", "cosine": 0.349}, {"symbol": "Լ", "cosine": 0.27}, {"symbol": "Գ", "cosine": 0.233}], "Ր": [{"symbol": "Մ", "cosine": 0.201}, {"symbol": "Ղ", "cosine": 0.193}, {"symbol": "Զ", "cosine": 0.159}], "Ց": [{"symbol": "Ն", "cosine": 0.171}, {"symbol": "Ձ", "cosine": 0.164}, {"symbol": "Զ", "cosine": 0.14}], "Ւ": [{"symbol": "Վ", "cosine": 0.275}, {"symbol": "Յ", "cosine": 0.142}, {"symbol": "Ղ", "cosine": 0.141}], "Փ": [{"symbol": "Պ", "cosine": 0.307}, {"symbol": "Խ", "cosine": 0.2}, {"symbol": "Հ", "cosine": 0.194}], "Ք": [{"symbol": "Գ", "cosine": 0.185}, {"symbol": "Կ", "cosine": 0.171}, {"symbol": "Թ", "cosine": 0.165}]}, "triads": {"k": 2, "letters": 15, "within_share": 0.5, "chance_mean": 0.0584, "p_value": 0.0001999600079984003, "permutations": 5000}, "moved_3d": null}}, "triads": {"lips": "ԲՊՓ", "back of the tongue": "ԳԿՔ", "teeth": "ԴՏԹ", "teeth, hissing": "ՁԾՑ", "palate, hushing": "ՋՃՉ"}}</script>
+<script>
+(() => {
+  const $ = (id) => document.getElementById(id);
+  const D = JSON.parse($("data").textContent);
+  const V0 = D.variants[0];
+  const LAY = D.layout[V0];
+  const ROWS = D.letters;
+  const BY = Object.fromEntries(ROWS.map((r) => [r.upper, r]));
+  const COL = { "lips": "--vermilion", "back of the tongue": "--saffron", "teeth": "--turquoise", "teeth, hissing": "--rose", "palate, hushing": "--verdigris" };
+  const colour = (r) => r.group === "later" ? "var(--silver)" : r.group === "ligature" ? "var(--copper)" : r.triad ? `var(${COL[r.triad]})` : "var(--gold)";
+  const hand = new Set(D.placed_by_hand.map((c) => c === "և" ? "ԵՒ" : c));
+
+  // ---------------------------------------------------------------- the letter card
+  function card(up) {
+    const r = BY[up];
+    const nb = (LAY.neighbours[up] || []).map((n) => `<span style="font-family:var(--f-hy)">${BY[n.symbol].lower}</span> <span class="ipa">${n.cosine.toFixed(2)}</span>`).join(" · ");
+    const placed = hand.has(up) ? `<p class="hint">Placed by hand in this version: the model behind this sky has no learned place for it yet.</p>` : "";
+    $("card").innerHTML = `
+      <div class="glyph">${r.group === "ligature" ? "Եւ" : r.upper}<small>${r.lower}</small></div>
+      <dl>
+        <dt>Name</dt><dd><span style="font-family:var(--f-hy)">${r.name}</span> (${r.latin})</dd>
+        ${r.numeral ? `<dt>Numeral</dt><dd class="ipa">${r.numeral.toLocaleString("en-US")}</dd>` : ""}
+        <dt>Eastern</dt><dd class="ipa">[${r.ipa_east}]</dd>
+        <dt>Western</dt><dd class="ipa">[${r.ipa_west}]${r.sound_differs ? ` <span class="grade">differs</span>` : ""}</dd>
+        ${r.triad ? `<dt>Set</dt><dd>${r.triad} <span style="font-family:var(--f-hy)">${Object.values(D.triads).find((s) => s.includes(up)).split("").map((c) => BY[c].lower).join(" ")}</span></dd>` : ""}
+        ${nb ? `<dt>Nearest</dt><dd>${nb}</dd>` : ""}
+        ${r.reform ? `<dt>Spelling</dt><dd>${r.reform}</dd>` : ""}
+      </dl>${placed}`;
+  }
+
+  // ---------------------------------------------------------------- the finding
+  const T = LAY.triads;
+  $("big").innerHTML = `${Math.round(T.within_share * 100)}%<span> vs ${Math.round(T.chance_mean * 100)}% by chance</span>`;
+  $("finding-text").innerHTML = `Armenian's stops and affricates come in sets of three, by where the mouth makes them. For these ${T.letters} letters, ${Math.round(T.within_share * 100)}% of each letter's two nearest neighbours in the model come from its own set. Shuffling the letters ${T.permutations.toLocaleString("en-US")} times gives ${Math.round(T.chance_mean * 100)}% on average, and no shuffle came close (p = ${T.p_value < 0.001 ? T.p_value.toExponential(1) : T.p_value.toFixed(3)}). The model only ever saw spelling. <span class="grade">${D.grade}</span>`;
+  $("sets").innerHTML = Object.entries(D.triads).map(([k, s]) => `<span style="color:var(${COL[k]})">${s.split("").map((c) => BY[c].lower).join(" ")} <em>${k}</em></span>`).join("");
+
+  // ---------------------------------------------------------------- the flat chart (x right, y up), also the poster
+  function chart(svg, w, h, labels) {
+    const P = D.positions;
+    const keys = Object.keys(P);
+    const xs = keys.map((k) => P[k][V0][0]), ys = keys.map((k) => P[k][V0][1]);
+    const pad = 40, minx = Math.min(...xs), maxx = Math.max(...xs), miny = Math.min(...ys), maxy = Math.max(...ys);
+    const s = Math.min((w - 2 * pad) / (maxx - minx || 1), (h - 2 * pad) / (maxy - miny || 1));
+    const X = (x) => w / 2 + (x - (minx + maxx) / 2) * s, Y = (y) => h / 2 - (y - (miny + maxy) / 2) * s;
+    let out = "";
+    const seen = new Set();
+    for (const a of LAY.symbols) for (const n of LAY.neighbours[a].slice(0, 2)) {
+      const e = [a, n.symbol].sort().join(""); if (seen.has(e)) continue; seen.add(e);
+      const same = BY[a].triad && BY[a].triad === BY[n.symbol].triad;
+      out += `<line x1="${X(P[a][V0][0])}" y1="${Y(P[a][V0][1])}" x2="${X(P[n.symbol][V0][0])}" y2="${Y(P[n.symbol][V0][1])}" stroke="${same ? colour(BY[a]) : "var(--rule)"}" stroke-width="${same ? 1.6 : 1}" opacity="${same ? 0.9 : 0.8}"/>`;
+    }
+    for (const k of keys) {
+      const r = BY[k], x = X(P[k][V0][0]), y = Y(P[k][V0][1]);
+      out += `<g class="star" data-up="${k}" style="cursor:pointer"><circle cx="${x}" cy="${y}" r="13" fill="${colour(r)}" opacity="0.16"/><circle cx="${x}" cy="${y}" r="2.4" fill="${colour(r)}"/>`;
+      if (labels) out += `<text x="${x + 7}" y="${y - 6}" fill="${colour(r)}" font-family="var(--f-hy)" font-size="17">${r.lower}</text>`;
+      out += `<title>${r.upper}${r.lower} ${r.name}</title></g>`;
+    }
+    svg.setAttribute("viewBox", `0 0 ${w} ${h}`);
+    svg.innerHTML = out;
+  }
+  chart($("chart"), 900, 520, true);
+  $("chart").addEventListener("click", (e) => { const g = e.target.closest(".star"); if (g) card(g.dataset.up); });
+  const poster = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  poster.setAttribute("width", "100%"); poster.setAttribute("height", "100%");
+  $("poster").appendChild(poster); chart(poster, 800, 600, true);
+  $("legend").innerHTML = [["var(--gold)", "Mashtots' 36"], ...Object.entries(COL).map(([k, v]) => [`var(${v})`, k]), ["var(--silver)", "later arrivals Օ Ֆ"], ["var(--copper)", "ligature և"]]
+    .map(([c, t]) => `<span><i style="background:${c}"></i>${t}</span>`).join("");
+  $("sources").innerHTML = [
+    `Similarities: ${D.source}. <span class="grade">${D.grade}</span>`,
+    `Layout: metric MDS of 1 − cosine, stress ${LAY.stress} (0 would be a perfect map; distances are approximate).`,
+    D.placed_by_hand.length ? `Placed by hand, not learned yet: ${D.placed_by_hand.join(" ")}.` : `Every symbol has a learned place.`,
+    `Names and sounds: standard descriptions, typed by Claude; a Western Armenian reader should check them, and the title.`,
+  ].map((t) => `<li>${t}</li>`).join("");
+  card("Բ");
+
+  // ---------------------------------------------------------------- the live sky
+  function dress(canvas) {
+    const root = canvas.shadowRoot; if (!root) return false;
+    if (!root.__dressed) {
+      const css = $("xite-css").textContent;
+      try { const sh = new CSSStyleSheet(); sh.replaceSync(css); root.adoptedStyleSheets = [...root.adoptedStyleSheets, sh]; }
+      catch (e) { const st = document.createElement("style"); st.textContent = css; root.prepend(st); }
+      root.__dressed = true;
+    }
+    const surf = root.querySelector(".x_ite-private-browser"); if (surf) surf.style.display = ""; return !!surf;
+  }
+  function toggle(btn, on, off) { btn.addEventListener("click", () => { const p = btn.getAttribute("aria-pressed") !== "true"; btn.setAttribute("aria-pressed", String(p)); (p ? on : off)(); }); }
+
+  async function boot() {
+    try {
+      if (typeof X3D === "undefined") throw new Error("X_ITE did not load");
+      const canvas = $("scene"), br = canvas.browser;
+      dress(canvas);
+      let n = 0; const keep = setInterval(() => { dress(canvas); if (++n > 20) clearInterval(keep); }, 250);
+      await br.loadURL(new X3D.MFString("constellation.xml"));
+      dress(canvas);
+      const sc = br.currentScene, node = (k) => sc.getNamedNode(k);
+      const spin = node("SPIN_CLOCK");
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) { spin.enabled = false; $("b-spin").setAttribute("aria-pressed", "false"); }
+      toggle($("b-spin"), () => (spin.enabled = true), () => (spin.enabled = false));
+      toggle($("b-threads"), () => (node("THREADS").whichChoice = 0), () => (node("THREADS").whichChoice = -1));
+      toggle($("b-sets"), () => (node("SETS").whichChoice = 0), () => (node("SETS").whichChoice = -1));
+      for (const [k, label] of [["VP_ALL", "Whole sky"], ["VP_SIDE", "Side"], ["VP_NEAR", "Among the letters"]]) {
+        const b = document.createElement("button"); b.type = "button"; b.textContent = label;
+        b.addEventListener("click", () => (node(k).set_bind = true)); $("vps").appendChild(b);
+      }
+      if (D.variants.length > 1) {
+        const m = node("MORPH_CLOCK"); $("b-morph").hidden = false;
+        toggle($("b-morph"), () => (m.enabled = true), () => (m.enabled = false));
+      }
+      for (const r of ROWS) {
+        let t; try { t = node(`T${String(r.index).padStart(2, "0")}`); } catch (e) { continue; }
+        t.addFieldCallback("card", "touchTime", () => card(r.upper));
+      }
+      $("poster").classList.add("gone");
+      $("status").textContent = "Drag to turn the sky. Click a letter.";
+    } catch (e) {
+      $("status").textContent = "The live sky needs WebGL 2. The flat chart below shows the same map.";
+      console.error(e);
+    }
+  }
+  if (document.readyState === "complete") boot(); else window.addEventListener("load", boot);
+})();
+</script>

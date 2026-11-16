@@ -1,0 +1,310 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<X3D profile='Immersive' version='4.0' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='https://www.web3d.org/specifications/x3d-4.0.xsd'>
+<head>
+<meta name='title' content='Letter constellation'/>
+<meta name='creator' content='hagopjay and Claude'/>
+<meta name='generator' content='x3d.Mashtots poc/letters/constellation.py'/>
+<meta name='source' content='mashtots-40M input embeddings (core run g4a, 2026-11-15 09:56:54 UTC)'/>
+<meta name='grade' content='Measured'/>
+<meta name='layout' content='SMACOF MDS of 1 - cosine; stress 0.264'/>
+<meta name='font' content='Noto Serif Armenian (SIL Open Font License)'/>
+<meta name='license' content='scene: same as the repository; font: OFL'/>
+</head>
+<Scene>
+<WorldInfo title='Letter constellation' info='"Armenian letters placed by what a language model learned about them"'/>
+<NavigationInfo type='"EXAMINE" "ANY"' headlight='false'/>
+<Background skyColor='0.05 0.09 0.22 0.035 0.06 0.15 0.02 0.035 0.09 0.012 0.02 0.055' skyAngle='0.9 1.7 2.6'/>
+<Viewpoint DEF='VP_ALL' description='The whole sky' position='0 1.2 17' orientation='1 0 0 -0.07' fieldOfView='0.7'/>
+<Viewpoint DEF='VP_SIDE' description='From the side' position='17 1 0' orientation='0 1 0 1.5708' fieldOfView='0.7'/>
+<Viewpoint DEF='VP_NEAR' description='Among the letters' position='0 0 7.5' fieldOfView='0.9'/>
+<TimeSensor DEF='SPIN_CLOCK' cycleInterval='180' loop='true'/>
+<OrientationInterpolator DEF='SPIN' key='0 0.25 0.5 0.75 1' keyValue='0 1 0 0 0 1 0 1.5708 0 1 0 3.1416 0 1 0 4.7124 0 1 0 6.2832'/>
+<Transform DEF='SKY'>
+<Transform DEF='S00' translation='3.206 -2.143 1.445'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ա" "ա"'/><MetadataInteger containerField='value' name='index' value='0'/><MetadataInteger containerField='value' name='numeral' value='1'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T00' description='այբ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g00.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S01' translation='-1.685 -3.274 1.836'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Բ" "բ"'/><MetadataInteger containerField='value' name='index' value='1'/><MetadataInteger containerField='value' name='numeral' value='2'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T01' description='բեն'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.93 0.33 0.24' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.648 0.594'/><ImageTexture url='"glyphs/g01.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S02' translation='-1.956 -3.023 -0.1701'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Գ" "գ"'/><MetadataInteger containerField='value' name='index' value='2'/><MetadataInteger containerField='value' name='numeral' value='3'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T02' description='գիմ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.98 0.66 0.18' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.846 0.558'/><ImageTexture url='"glyphs/g02.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S03' translation='1.13 1.685 -4.071'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Դ" "դ"'/><MetadataInteger containerField='value' name='index' value='3'/><MetadataInteger containerField='value' name='numeral' value='4'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T03' description='դա'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.25 0.8 0.78' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.6 0.93 0.918'/><ImageTexture url='"glyphs/g03.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S04' translation='1.748 -3.786 1.804'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ե" "ե"'/><MetadataInteger containerField='value' name='index' value='4'/><MetadataInteger containerField='value' name='numeral' value='5'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T04' description='եչ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g04.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S05' translation='-0.1743 3.834 -0.7584'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Զ" "զ"'/><MetadataInteger containerField='value' name='index' value='5'/><MetadataInteger containerField='value' name='numeral' value='6'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T05' description='զա'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g05.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S06' translation='3.339 -1.006 3.639'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Է" "է"'/><MetadataInteger containerField='value' name='index' value='6'/><MetadataInteger containerField='value' name='numeral' value='7'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T06' description='է'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g06.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S07' translation='5 -0.1822 -1.123'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ը" "ը"'/><MetadataInteger containerField='value' name='index' value='7'/><MetadataInteger containerField='value' name='numeral' value='8'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T07' description='ըթ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g07.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S08' translation='-0.1298 -3.41 -1.871'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Թ" "թ"'/><MetadataInteger containerField='value' name='index' value='8'/><MetadataInteger containerField='value' name='numeral' value='9'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T08' description='թօ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.25 0.8 0.78' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.6 0.93 0.918'/><ImageTexture url='"glyphs/g08.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S09' translation='-4.42 0.0731 -0.4117'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ժ" "ժ"'/><MetadataInteger containerField='value' name='index' value='9'/><MetadataInteger containerField='value' name='numeral' value='10'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T09' description='ժէ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g09.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S10' translation='4.322 -2.286 -0.5201'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ի" "ի"'/><MetadataInteger containerField='value' name='index' value='10'/><MetadataInteger containerField='value' name='numeral' value='20'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T10' description='ինի'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g10.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S11' translation='-0.0156 -1.534 -3.568'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Լ" "լ"'/><MetadataInteger containerField='value' name='index' value='11'/><MetadataInteger containerField='value' name='numeral' value='30'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T11' description='լիւն'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g11.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S12' translation='-1.901 -1.287 3.625'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Խ" "խ"'/><MetadataInteger containerField='value' name='index' value='12'/><MetadataInteger containerField='value' name='numeral' value='40'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T12' description='խէ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g12.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S13' translation='-2.799 2.857 1.758'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ծ" "ծ"'/><MetadataInteger containerField='value' name='index' value='13'/><MetadataInteger containerField='value' name='numeral' value='50'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T13' description='ծա'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.92 0.45 0.66' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.72 0.846'/><ImageTexture url='"glyphs/g13.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S14' translation='-0.0392 -4.113 0.012'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Կ" "կ"'/><MetadataInteger containerField='value' name='index' value='14'/><MetadataInteger containerField='value' name='numeral' value='60'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T14' description='կեն'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.98 0.66 0.18' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.846 0.558'/><ImageTexture url='"glyphs/g14.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S15' translation='-0.3173 -2.057 2.958'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Հ" "հ"'/><MetadataInteger containerField='value' name='index' value='15'/><MetadataInteger containerField='value' name='numeral' value='70'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T15' description='հօ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g15.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S16' translation='-3.244 3.477 -0.6856'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ձ" "ձ"'/><MetadataInteger containerField='value' name='index' value='16'/><MetadataInteger containerField='value' name='numeral' value='80'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T16' description='ձա'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.92 0.45 0.66' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.72 0.846'/><ImageTexture url='"glyphs/g16.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S17' translation='-0.5267 4.248 1.666'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ղ" "ղ"'/><MetadataInteger containerField='value' name='index' value='17'/><MetadataInteger containerField='value' name='numeral' value='90'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T17' description='ղատ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g17.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S18' translation='-3.438 0.3209 -2.241'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ճ" "ճ"'/><MetadataInteger containerField='value' name='index' value='18'/><MetadataInteger containerField='value' name='numeral' value='100'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T18' description='ճէ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.55 0.82 0.35' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.78 0.942 0.66'/><ImageTexture url='"glyphs/g18.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S19' translation='2.072 -0.0075 -3.045'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Մ" "մ"'/><MetadataInteger containerField='value' name='index' value='19'/><MetadataInteger containerField='value' name='numeral' value='200'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T19' description='մէն'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g19.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S20' translation='2.236 2.53 2.211'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Յ" "յ"'/><MetadataInteger containerField='value' name='index' value='20'/><MetadataInteger containerField='value' name='numeral' value='300'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T20' description='յի'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g20.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S21' translation='4.146 1.399 -0.6946'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ն" "ն"'/><MetadataInteger containerField='value' name='index' value='21'/><MetadataInteger containerField='value' name='numeral' value='400'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T21' description='նու'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g21.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S22' translation='-3.522 -2.082 -0.7977'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Շ" "շ"'/><MetadataInteger containerField='value' name='index' value='22'/><MetadataInteger containerField='value' name='numeral' value='500'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T22' description='շա'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g22.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S23' translation='3.895 0.562 1.915'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ո" "ո"'/><MetadataInteger containerField='value' name='index' value='23'/><MetadataInteger containerField='value' name='numeral' value='600'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T23' description='ո'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g23.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S24' translation='-1.803 -0.1923 -4.035'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Չ" "չ"'/><MetadataInteger containerField='value' name='index' value='24'/><MetadataInteger containerField='value' name='numeral' value='700'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T24' description='չա'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.55 0.82 0.35' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.78 0.942 0.66'/><ImageTexture url='"glyphs/g24.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S25' translation='-3.054 -1.485 1.539'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Պ" "պ"'/><MetadataInteger containerField='value' name='index' value='25'/><MetadataInteger containerField='value' name='numeral' value='800'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T25' description='պէ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.93 0.33 0.24' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.648 0.594'/><ImageTexture url='"glyphs/g25.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S26' translation='-2.653 1.879 -2.428'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ջ" "ջ"'/><MetadataInteger containerField='value' name='index' value='26'/><MetadataInteger containerField='value' name='numeral' value='900'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T26' description='ջէ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.55 0.82 0.35' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.78 0.942 0.66'/><ImageTexture url='"glyphs/g26.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S27' translation='-3.82 0.7969 2.076'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ռ" "ռ"'/><MetadataInteger containerField='value' name='index' value='27'/><MetadataInteger containerField='value' name='numeral' value='1000'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T27' description='ռա'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g27.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S28' translation='2.637 2.133 -2.388'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ս" "ս"'/><MetadataInteger containerField='value' name='index' value='28'/><MetadataInteger containerField='value' name='numeral' value='2000'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T28' description='սէ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g28.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S29' translation='0.4654 0.1577 3.682'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Վ" "վ"'/><MetadataInteger containerField='value' name='index' value='29'/><MetadataInteger containerField='value' name='numeral' value='3000'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T29' description='վեւ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g29.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S30' translation='-1.593 -2.702 -2.791'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Տ" "տ"'/><MetadataInteger containerField='value' name='index' value='30'/><MetadataInteger containerField='value' name='numeral' value='4000'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T30' description='տիւն'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.25 0.8 0.78' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.6 0.93 0.918'/><ImageTexture url='"glyphs/g30.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S31' translation='2.047 4.101 -0.2581'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ր" "ր"'/><MetadataInteger containerField='value' name='index' value='31'/><MetadataInteger containerField='value' name='numeral' value='5000'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T31' description='րէ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g31.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S32' translation='-0.2206 3.508 -2.855'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ց" "ց"'/><MetadataInteger containerField='value' name='index' value='32'/><MetadataInteger containerField='value' name='numeral' value='6000'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T32' description='ցօ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.92 0.45 0.66' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.72 0.846'/><ImageTexture url='"glyphs/g32.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S33' translation='0.7262 2.773 3.808'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ւ" "ւ"'/><MetadataInteger containerField='value' name='index' value='33'/><MetadataInteger containerField='value' name='numeral' value='7000'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T33' description='հիւն'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.8 0.42' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 1 1'/><ImageTexture url='"glyphs/g33.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S34' translation='-1.855 1.115 3.595'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Փ" "փ"'/><MetadataInteger containerField='value' name='index' value='34'/><MetadataInteger containerField='value' name='numeral' value='8000'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T34' description='փիւր'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.93 0.33 0.24' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.648 0.594'/><ImageTexture url='"glyphs/g34.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S35' translation='2.2 -2.881 -2.856'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ք" "ք"'/><MetadataInteger containerField='value' name='index' value='35'/><MetadataInteger containerField='value' name='numeral' value='9000'/><MetadataString containerField='value' name='group' value='"mashtots"'/></MetadataSet>
+<TouchSensor DEF='T35' description='քէ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.98 0.66 0.18' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.846 0.558'/><ImageTexture url='"glyphs/g35.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S36' translation='-6.797 -0.5 -3.17'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Օ" "օ"'/><MetadataInteger containerField='value' name='index' value='36'/><MetadataString containerField='value' name='group' value='"later"'/></MetadataSet>
+<TouchSensor DEF='T36' description='օ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.78 0.84 0.95' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.918 0.954 1'/><ImageTexture url='"glyphs/g36.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S37' translation='-4.085 -0.5 -6.29'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"Ֆ" "ֆ"'/><MetadataInteger containerField='value' name='index' value='37'/><MetadataString containerField='value' name='group' value='"later"'/></MetadataSet>
+<TouchSensor DEF='T37' description='ֆէ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.78 0.84 0.95' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.918 0.954 1'/><ImageTexture url='"glyphs/g37.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Transform DEF='S38' translation='1.237 0.6936 2.806'>
+<MetadataSet containerField='metadata' name='letter'><MetadataString containerField='value' name='symbol' value='"ԵՒ" "և"'/><MetadataInteger containerField='value' name='index' value='38'/><MetadataString containerField='value' name='group' value='"ligature"'/></MetadataSet>
+<TouchSensor DEF='T38' description='եւ'/>
+<Billboard axisOfRotation='0 0 0'>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.96 0.58 0.38' transparency='0.55'/><ImageTexture url='"halo.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.9 -0.9 -0.01 0.9 -0.9 -0.01 0.9 0.9 -0.01 -0.9 0.9 -0.01'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='1 0.798 0.678'/><ImageTexture url='"glyphs/g38.png"'/></Appearance><IndexedFaceSet solid='false' coordIndex='0 1 2 3 -1'><Coordinate point='-0.55 -0.55 0 0.55 -0.55 0 0.55 0.55 0 -0.55 0.55 0'/><TextureCoordinate point='0 0 1 0 1 1 0 1'/></IndexedFaceSet></Shape>
+</Billboard></Transform>
+<Switch DEF='THREADS' whichChoice='0'><Shape><Appearance><UnlitMaterial transparency='0.35'/><LineProperties linewidthScaleFactor='1.6'/></Appearance>
+<IndexedLineSet colorPerVertex='true' coordIndex='0 1 -1 2 3 -1 4 5 -1 6 7 -1 8 9 -1 10 11 -1 12 13 -1 14 15 -1 16 17 -1 18 19 -1 20 21 -1 22 23 -1 24 25 -1 26 27 -1 28 29 -1 30 31 -1 32 33 -1 34 35 -1 36 37 -1 38 39 -1 40 41 -1 42 43 -1 44 45 -1 46 47 -1 48 49 -1 50 51 -1 52 53 -1 54 55 -1 56 57 -1 58 59 -1 60 61 -1 62 63 -1 64 65 -1 66 67 -1 68 69 -1 70 71 -1 72 73 -1 74 75 -1 76 77 -1 78 79 -1 80 81 -1 82 83 -1 84 85 -1 86 87 -1 88 89 -1 90 91 -1 92 93 -1 94 95 -1 96 97 -1 98 99 -1'><Coordinate DEF='THREAD_POINTS' point='3.206 -2.143 1.445 3.895 0.562 1.915 3.206 -2.143 1.445 4.322 -2.286 -0.5201 -1.685 -3.274 1.836 -1.956 -3.023 -0.1701 -1.685 -3.274 1.836 -3.054 -1.485 1.539 -1.956 -3.023 -0.1701 -1.901 -1.287 3.625 1.13 1.685 -4.071 2.637 2.133 -2.388 1.13 1.685 -4.071 -0.1743 3.834 -0.7584 1.748 -3.786 1.804 -0.1298 -3.41 -1.871 1.748 -3.786 1.804 3.339 -1.006 3.639 -0.1743 3.834 -0.7584 2.637 2.133 -2.388 3.339 -1.006 3.639 4.322 -2.286 -0.5201 5 -0.1822 -1.123 4.146 1.399 -0.6946 5 -0.1822 -1.123 4.322 -2.286 -0.5201 -0.1298 -3.41 -1.871 -1.593 -2.702 -2.791 -1.956 -3.023 -0.1701 -0.1298 -3.41 -1.871 -4.42 0.0731 -0.4117 -3.438 0.3209 -2.241 -0.1298 -3.41 -1.871 -4.42 0.0731 -0.4117 4.322 -2.286 -0.5201 4.146 1.399 -0.6946 -0.0156 -1.534 -3.568 -1.593 -2.702 -2.791 -0.0156 -1.534 -3.568 -3.054 -1.485 1.539 -1.901 -1.287 3.625 -0.3173 -2.057 2.958 -1.901 -1.287 3.625 -2.799 2.857 1.758 -2.799 2.857 1.758 -3.244 3.477 -0.6856 -1.956 -3.023 -0.1701 -0.0392 -4.113 0.012 -0.0392 -4.113 0.012 -1.593 -2.702 -2.791 -1.956 -3.023 -0.1701 -0.3173 -2.057 2.958 -3.244 3.477 -0.6856 -2.653 1.879 -2.428 -0.1743 3.834 -0.7584 -0.5267 4.248 1.666 -0.5267 4.248 1.666 2.047 4.101 -0.2581 -3.438 0.3209 -2.241 -2.653 1.879 -2.428 2.072 -0.0075 -3.045 2.637 2.133 -2.388 2.072 -0.0075 -3.045 2.047 4.101 -0.2581 -1.901 -1.287 3.625 2.236 2.53 2.211 -0.3173 -2.057 2.958 2.236 2.53 2.211 -1.956 -3.023 -0.1701 -3.522 -2.082 -0.7977 -3.522 -2.082 -0.7977 -3.054 -1.485 1.539 2.236 2.53 2.211 3.895 0.562 1.915 -3.438 0.3209 -2.241 -1.803 -0.1923 -4.035 -0.0156 -1.534 -3.568 -1.803 -0.1923 -4.035 -3.054 -1.485 1.539 -1.855 1.115 3.595 -0.3173 -2.057 2.958 -3.82 0.7969 2.076 -3.438 0.3209 -2.241 -3.82 0.7969 2.076 0.4654 0.1577 3.682 0.7262 2.773 3.808 -0.3173 -2.057 2.958 0.4654 0.1577 3.682 4.146 1.399 -0.6946 -0.2206 3.508 -2.855 -3.244 3.477 -0.6856 -0.2206 3.508 -2.855 2.236 2.53 2.211 0.7262 2.773 3.808 -1.901 -1.287 3.625 -1.855 1.115 3.595 -1.956 -3.023 -0.1701 2.2 -2.881 -2.856 -0.0392 -4.113 0.012 2.2 -2.881 -2.856'/><Color color='0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.93 0.33 0.24 0.93 0.33 0.24 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.25 0.8 0.78 0.25 0.8 0.78 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.92 0.45 0.66 0.92 0.45 0.66 0.98 0.66 0.18 0.98 0.66 0.18 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.82 0.35 0.55 0.82 0.35 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.82 0.35 0.55 0.82 0.35 0.55 0.5 0.4 0.55 0.5 0.4 0.93 0.33 0.24 0.93 0.33 0.24 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.92 0.45 0.66 0.92 0.45 0.66 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.55 0.5 0.4 0.98 0.66 0.18 0.98 0.66 0.18 0.98 0.66 0.18 0.98 0.66 0.18'/></IndexedLineSet></Shape></Switch>
+<Switch DEF='SETS' whichChoice='0'><Group>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.93 0.33 0.24' transparency='0.8'/></Appearance><TriangleSet solid='false'><Coordinate point='-1.685 -3.274 1.836 -3.054 -1.485 1.539 -1.855 1.115 3.595'/></TriangleSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.98 0.66 0.18' transparency='0.8'/></Appearance><TriangleSet solid='false'><Coordinate point='-1.956 -3.023 -0.1701 -0.0392 -4.113 0.012 2.2 -2.881 -2.856'/></TriangleSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.25 0.8 0.78' transparency='0.8'/></Appearance><TriangleSet solid='false'><Coordinate point='1.13 1.685 -4.071 -1.593 -2.702 -2.791 -0.1298 -3.41 -1.871'/></TriangleSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.92 0.45 0.66' transparency='0.8'/></Appearance><TriangleSet solid='false'><Coordinate point='-3.244 3.477 -0.6856 -2.799 2.857 1.758 -0.2206 3.508 -2.855'/></TriangleSet></Shape>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.55 0.82 0.35' transparency='0.8'/></Appearance><TriangleSet solid='false'><Coordinate point='-2.653 1.879 -2.428 -3.438 0.3209 -2.241 -1.803 -0.1923 -4.035'/></TriangleSet></Shape>
+</Group></Switch>
+<Shape><Appearance><UnlitMaterial emissiveColor='0.96 0.58 0.38' transparency='0.5'/></Appearance><IndexedLineSet coordIndex='0 1 -1 0 2 -1'><Coordinate point='1.237 0.6936 2.806 1.748 -3.786 1.804 0.7262 2.773 3.808'/></IndexedLineSet></Shape>
+</Transform>
+<ROUTE fromNode='SPIN_CLOCK' fromField='fraction_changed' toNode='SPIN' toField='set_fraction'/>
+<ROUTE fromNode='SPIN' fromField='value_changed' toNode='SKY' toField='set_rotation'/>
+</Scene>
+</X3D>
