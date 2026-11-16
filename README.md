@@ -13,7 +13,7 @@ Snapshot of 29 Oct 2026, taken from `~/Projects/x3d/work/` on the working Mac.
 | `numerals/` | A static 36-letter X3D lattice and the numeral maths. | `numerals/README.md` |
 | `poc/` | The Mashtots proof of concept (notebook, plan, pre-registration, data card, funding one-pager). | `poc/README.md` |
 | `armenian-tokenizer-census/` | Tokenizer fertility on Armenian (Eastern, Western, Classical, UDHR). **`data/` (127 MB of downloaded third-party treebanks and tokenizer files) is not included:** re-fetch it with `fetch_tokenizers.py` and the UD treebanks (UD_Armenian-ArmTDP, UD_Armenian-BSUT, UD_Classical_Armenian-CAVaL, UD_Western_Armenian-ArmTDP) and the UDHR texts. | its README, `out/results.md` |
-| `notes/` | Hand-over notes from the working sessions (Landing exploration, Nemotron and Armenian research, the POC, the census). | |
+| `notes/` | Hand-over notes from the working sessions (Landing exploration, Nemotron and Armenian research, the POC, the census, lineage and quote matching for Armenian text). | |
 
 ## Run the Landing
 
