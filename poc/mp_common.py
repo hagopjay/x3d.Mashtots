@@ -70,6 +70,7 @@ COPA_REFERENCE = {"params": 410e6, "bpb_panel_mean_union": 0.532, "bpb_best_sing
 
 # ---------------------------------------------------------------- tokenizer arms and model sizes
 ARMS = ["bytes", "bpe", "mashtots"]
+EXTRA_ARMS = ["letters"]          # the letters study (LETTERS-PREREG.md); never part of the H1-H6 grid
 VOCAB = 32000
 # d_model, layers, heads -> non-embedding params about 12 * L * d^2 (SwiGLU hidden = 8/3 d)
 SIZES = {

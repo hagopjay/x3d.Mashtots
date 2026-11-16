@@ -30,18 +30,24 @@ import mp_tok as TK  # noqa: E402
 
 
 class Mixture:
-    def __init__(self, root, arm, T, grabar, seq, seed):
+    def __init__(self, root, arm, T, grabar, seq, seed, pools="EW", w_file="", w_share=None):
         self.seq = seq
         self.rng = np.random.default_rng(seed)
         self.pools = {}
         self.bytes_arm = arm == "bytes"
         dt = np.uint8 if self.bytes_arm else np.uint16             # bytes: raw UTF-8 with 0xFF between documents (mp_tok.encode_pools)
         for v in "EWG":
-            p = pathlib.Path(root) / "tokens" / arm / f"{v}.bin"
+            if v in "EW" and v not in pools:                       # dialect-only models (letters study): read one pool only
+                continue
+            p = pathlib.Path(root) / "tokens" / arm / (w_file if (v == "W" and w_file) else f"{v}.bin")
             if p.exists() and p.stat().st_size > 2 * (seq + 2):
                 self.pools[v] = np.memmap(p, dtype=dt, mode="r")
         n = {v: len(a) for v, a in self.pools.items()}
         pw = min(0.5, 4 * n.get("W", 0) / T) if "W" in n else 0.0
+        if w_share is not None and "W" in n:                       # a fixed Western share for every arm (exploratory P2)
+            pw = float(w_share)
+        if pools == "W":
+            pw = 1.0
         pg = min(0.25, 4 * n.get("G", 0) / T) if (grabar and "G" in n) else 0.0
         self.p = {"E": 1 - pw - pg, "W": pw, "G": pg}
         self.p = {v: p for v, p in self.p.items() if p > 0 and v in self.pools}
@@ -92,7 +98,7 @@ def save_ckpt(path, model, opt, step, mix, extra):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", required=True)
-    ap.add_argument("--arm", required=True, choices=C.ARMS)
+    ap.add_argument("--arm", required=True, choices=C.ARMS + C.EXTRA_ARMS)
     ap.add_argument("--size", required=True, choices=list(C.SIZES))
     ap.add_argument("--out", required=True)
     ap.add_argument("--grabar", action="store_true")
@@ -104,6 +110,9 @@ def main():
     ap.add_argument("--mirror", default="")
     ap.add_argument("--ckpt-minutes", type=float, default=15)
     ap.add_argument("--stop-at", type=float, default=0, help="unix time; stop cleanly (checkpoint) when reached")
+    ap.add_argument("--pools", default="EW", choices=["EW", "E", "W"], help="letters study: train on one dialect's pool only")
+    ap.add_argument("--w-file", default="", help="Western ladder: train on tokens/<arm>/<w-file> instead of W.bin (e.g. W@0.25.bin)")
+    ap.add_argument("--w-share", type=float, default=None, help="fix the Western share instead of the 4-epoch rule (exploratory)")
     ap.add_argument("--bench-steps", type=int, default=0, help="only measure throughput for this many optimizer steps")
     a = ap.parse_args()
 
@@ -124,7 +133,9 @@ def main():
     model = M.GPT(cfg).to(device)
     counts = model.param_counts()
     T = int(a.tokens or C.train_tokens(a.size, dict(tokens_override=None)))
-    mix = Mixture(a.root, a.arm, T, a.grabar, a.seq, a.seed)
+    mix = Mixture(a.root, a.arm, T, a.grabar, a.seq, a.seed, pools=a.pools, w_file=a.w_file, w_share=a.w_share)
+    ladder = C.load_json(pathlib.Path(a.root) / "tokens" / "ladder_report.json", {})
+    w_mb = ladder.get(f"{a.arm}/{a.w_file or 'W.bin'}", {}).get("text_mb")
     btok = M.batch_tokens_for(a.size) if not C.LOCAL else 2048
     mb = micro_batch(a.size, device)
     accum = max(1, btok // (mb * a.seq))
@@ -151,7 +162,7 @@ def main():
     fpt = M.flops_per_token(cfg, counts["non_embedding"])
     meta = dict(arm=a.arm, size=a.size, grabar=a.grabar, config=cfg.to_dict(), params=counts, tokens=T, steps=steps, batch_tokens=btok,
                 micro_batch=mb, accum=accum, lr=lr, warmup=warm, mixture=mix.p, epochs_per_pool=mix.epochs, flops_per_token=fpt,
-                total_flops=fpt * T, device=device, torch=torch.__version__, compile=bool(a.compile), version=C.VERSION, started=C.stamp())
+                total_flops=fpt * T, pools=a.pools, seed=a.seed, w_file=a.w_file, w_share_fixed=a.w_share, w_text_mb=w_mb, device=device, torch=torch.__version__, compile=bool(a.compile), version=C.VERSION, started=C.stamp())
     C.dump_json(meta, out / "meta.json")
     print(f"{a.arm}-{a.size}{'-G' if a.grabar else ''}: {counts['non_embedding'] / 1e6:.1f}M non-embedding params, {T / 1e6:.0f}M tokens, "
           f"{steps} steps x {btok} tokens, lr {lr:.2e}, mixture {({k: round(v, 3) for k, v in mix.p.items()})}, epochs {mix.epochs}")
